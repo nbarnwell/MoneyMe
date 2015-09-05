@@ -60,8 +60,8 @@ namespace MoneyMe.Web
 
             //app.UseGoogleAuthentication(new GoogleOAuth2AuthenticationOptions()
             //{
-            //    ClientId = "",
-            //    ClientSecret = ""
+            //    ClientId = "782041166312-gu67hmcslipqacrg7kmsdak637a9nt6v.apps.googleusercontent.com",
+            //    ClientSecret = "B5IA_hbQ5WVeI0NwZR32cl8c"
             //});
         }
     }
