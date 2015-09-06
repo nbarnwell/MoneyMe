@@ -9,6 +9,7 @@ using Microsoft.AspNet.Identity;
 using Microsoft.AspNet.Identity.Owin;
 using Microsoft.Owin.Security;
 using MoneyMe.Web.Models;
+using MoneyMe.Web.Services;
 
 namespace MoneyMe.Web.Controllers
 {
@@ -165,6 +166,9 @@ namespace MoneyMe.Web.Controllers
                     // string code = await UserManager.GenerateEmailConfirmationTokenAsync(user.Id);
                     // var callbackUrl = Url.Action("ConfirmEmail", "Account", new { userId = user.Id, code = code }, protocol: Request.Url.Scheme);
                     // await UserManager.SendEmailAsync(user.Id, "Confirm your account", "Please confirm your account by clicking <a href=\"" + callbackUrl + "\">here</a>");
+                    
+                    // Create our own user object
+                    DataService.CreateInternalUser(user);
 
                     return RedirectToAction("Index", "Home");
                 }
