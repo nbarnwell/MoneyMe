@@ -7,6 +7,7 @@ using System.Linq;
 using System.Transactions;
 using Dapper;
 using MoneyMe.Web.Models;
+using MoneyMe.Web.Models.AccountTransactionHandling;
 using IsolationLevel = System.Transactions.IsolationLevel;
 
 namespace MoneyMe.Web.Services
@@ -100,6 +101,28 @@ namespace MoneyMe.Web.Services
                         where u.Id = @userId;",
                     new { userId = Context.GetUserId() })
                     .ToList());
+        }
+
+        public static IEnumerable<AccountTransactionCategoryInfo> GetCategories()
+        {
+            return Execute(
+                c =>
+                {
+                    var categories =
+                        c.Query<AccountTransactionCategoryInfo>(
+                            @"select * from AccountTransactionCategory;");
+
+                    var matchPatterns =
+                        c.Query<AccountTransactionCategoryInfo.MatchPattern>(
+                            @"select * from AccountTransactionCategoryMatchPattern;");
+
+                    foreach (var category in categories)
+                    {
+                        category.MatchPatterns = matchPatterns.Where(x => x.CategoryId == category.Id).ToList();
+                    }
+
+                    return categories;
+                });
         }
     }
 }

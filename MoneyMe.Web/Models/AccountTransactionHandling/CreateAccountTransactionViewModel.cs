@@ -1,14 +1,13 @@
 ﻿using System;
 
-namespace MoneyMe.Web.Models.AccountTransaction
+namespace MoneyMe.Web.Models.AccountTransactionHandling
 {
     public class CreateAccountTransactionViewModel
     {
-        public DateTimeOffset TransactionDate            { get; set; }
         public DateTimeOffset ReceiptDate                { get; set; }
         public decimal        Amount                     { get; set; }
         public string         Payee                      { get; set; }
         public string         Description                { get; set; }
-        public int            PaymentMethodId            { get; set; }
+        public int            AccountTransactionTypeId   { get; set; }
     }
 }

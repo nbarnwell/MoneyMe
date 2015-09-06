@@ -5,18 +5,17 @@
 }
 
 <h2>@ViewBag.Title</h2>
-
+@section scripts
+{
+    @Scripts.Render("~/bundles/moment");
+}
 <div class="row">
-    <div class="col-md-4 col-md-offset-4">
-        @using (Html.BeginForm("AccountTransaction", "Create", FormMethod.Post, new { @class = "form-horizontal", role = "form" }))
+    <div class="col-md-4">
+        @using (Html.BeginForm("Create", "AccountTransaction", FormMethod.Post, new { role = "form" }))
         {
             @Html.AntiForgeryToken()
             <h4>Transaction Details</h4>
             <hr />
-            <div class="form-group">
-                @Html.LabelFor(m => m.TransactionDate)
-                @Html.TextBoxFor(m => m.TransactionDate, new { @class = "form-control"})
-            </div>
             <div class="form-group">
                 @Html.LabelFor(m => m.ReceiptDate)
                 @Html.TextBoxFor(m => m.ReceiptDate, new { @class = "form-control"})
@@ -34,8 +33,11 @@
                 @Html.TextBoxFor(m => m.Description, new { @class = "form-control"})
             </div>
             <div class="form-group">
-                @Html.LabelFor(m => m.PaymentMethodId)
-                @Html.DropDownListFor(m => m.PaymentMethodId, new SelectList(ViewBag.PaymentMethods, "Id", "Name"), new { @class = "form-control" })
+                @Html.LabelFor(m => m.AccountTransactionTypeId)
+                @Html.DropDownListFor(m => m.AccountTransactionTypeId, new SelectList(ViewBag.PaymentMethods, "Id", "Name"), new { @class = "form-control" })
+            </div>
+            <div class="form-group pull-right">
+                <button type="submit" accesskey="S">Submit</button>
             </div>
         }
     </div>

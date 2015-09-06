@@ -1,0 +1,33 @@
+﻿@model MoneyMe.Web.Models.AccountTransaction.SetCategoriesViewModel
+
+@{
+    ViewBag.Title = "Set Categories";
+}
+
+<h2>@ViewBag.Title</h2>
+
+<div class="row">
+    <div class="col-md-4">
+        @using (Html.BeginForm("SetCategories", "AccountTransaction", FormMethod.Post, new { role = "form" }))
+        {
+            @Html.AntiForgeryToken()
+            <h4>Choose Category</h4>
+            <hr />
+
+            <div class="list-group">
+                @for(int i = 0; i<ViewBag.SuggestedCategories.Count; i++)
+                {
+                    <a href="#" class="list-group-item">
+                        <h4>@ViewBag.SuggestedCategories[i].Name</h4>
+                        @*@Html.HiddenFor(m => m.SelectedCategoryIds)
+                        @Html.TextBoxFor(m => )*@
+                    </a>
+                }
+            </div>
+            
+            <div class="pull-right">
+                <button type="submit" accesskey="S">Submit</button>
+            </div>
+        }
+    </div>
+</div>
