@@ -17,6 +17,7 @@ namespace MoneyMe.Web.Controllers
             var controllerNames = Assembly.GetExecutingAssembly()
                                           .GetTypes()
                                           .Where(x => typeof(Controller).IsAssignableFrom(x))
+                                          .Where(x => x.GetMethod("Index") != null)
                                           .Select(x => Regex.Replace(x.Name, "Controller$", ""))
                                           .ToList();
 
