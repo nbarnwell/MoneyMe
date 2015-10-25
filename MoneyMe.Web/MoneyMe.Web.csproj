@@ -182,6 +182,9 @@
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\Startup.Auth.cs" />
     <Compile Include="Controllers\AccountController.cs" />
+    <Compile Include="Controllers\AccountTransactionCategoryController.cs" />
+    <Compile Include="Controllers\AccountTransactionCategoryMatchPatternController.cs" />
+    <Compile Include="Controllers\AccountTransactionCategoryMatchPatternMatchMethodController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ImportController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
@@ -296,6 +299,24 @@
     <Content Include="Views\Shared\_LoginPartial.cshtml" />
     <Content Include="Views\AccountTransaction\Create.cshtml" />
     <Content Include="Views\AccountTransaction\SetCategories.cshtml" />
+    <Content Include="Views\AccountTransactionCategory\Create.cshtml" />
+    <Content Include="Views\AccountTransactionCategory\Edit.cshtml" />
+    <Content Include="Views\AccountTransactionCategory\Delete.cshtml" />
+    <Content Include="Views\AccountTransactionCategory\Details.cshtml" />
+    <Content Include="Views\AccountTransactionCategory\Index.cshtml" />
+    <Content Include="Views\AccountTransactionCategory\_CreateOrEdit.cshtml" />
+    <Content Include="Views\AccountTransactionCategoryMatchPatternMatchMethod\Create.cshtml" />
+    <Content Include="Views\AccountTransactionCategoryMatchPatternMatchMethod\Edit.cshtml" />
+    <Content Include="Views\AccountTransactionCategoryMatchPatternMatchMethod\Delete.cshtml" />
+    <Content Include="Views\AccountTransactionCategoryMatchPatternMatchMethod\Details.cshtml" />
+    <Content Include="Views\AccountTransactionCategoryMatchPatternMatchMethod\Index.cshtml" />
+    <Content Include="Views\AccountTransactionCategoryMatchPatternMatchMethod\_CreateOrEdit.cshtml" />
+    <Content Include="Views\AccountTransactionCategoryMatchPattern\Create.cshtml" />
+    <Content Include="Views\AccountTransactionCategoryMatchPattern\Edit.cshtml" />
+    <Content Include="Views\AccountTransactionCategoryMatchPattern\Delete.cshtml" />
+    <Content Include="Views\AccountTransactionCategoryMatchPattern\Details.cshtml" />
+    <Content Include="Views\AccountTransactionCategoryMatchPattern\Index.cshtml" />
+    <Content Include="Views\AccountTransactionCategoryMatchPattern\_CreateOrEdit.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
