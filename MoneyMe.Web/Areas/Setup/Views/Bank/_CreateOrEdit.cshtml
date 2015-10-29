@@ -1,0 +1,23 @@
+@model MoneyMe.Web.Models.Scaffolding.Bank
+
+@* This partial view defines form fields that will appear when creating and editing entities *@
+
+<div class="editor-label">
+    @Html.LabelFor(model => model.Name)
+</div>
+<div class="editor-field">
+    @Html.EditorFor(model => model.Name)
+    @Html.ValidationMessageFor(model => model.Name)
+</div>
+
+<div class="editor-label">
+    Position
+</div>
+<div class="editor-field">
+    @Html.DropDownListFor(model => model.PositionId, ((IEnumerable<MoneyMe.Web.Models.Scaffolding.Position>)ViewBag.PossiblePositions).Select(option => new SelectListItem {
+        Text = Html.DisplayTextFor(_ => option).ToString(), 
+        Value = option.Id.ToString(),
+        Selected = (Model != null) && (option.Id == Model.PositionId)
+    }), "Choose...")
+    @Html.ValidationMessageFor(model => model.PositionId)
+</div>

@@ -1,0 +1,32 @@
+@model MoneyMe.Web.Models.Scaffolding.AccountStatement
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<fieldset>
+    <legend>AccountStatement</legend>
+
+    <div class="display-label">PeriodStart</div>
+    <div class="display-field">@Model.PeriodStart</div>
+
+    <div class="display-label">PeriodEnd</div>
+    <div class="display-field">@Model.PeriodEnd</div>
+
+    <div class="display-label">StartingBalance</div>
+    <div class="display-field">@String.Format("{0:F}", Model.StartingBalance)</div>
+
+    <div class="display-label">AccountTransactions</div>
+    <div class="display-field">@(Model.AccountTransactions == null ? "None" : Model.AccountTransactions.Count.ToString())</div>
+
+    <div class="display-label">Account</div>
+    <div class="display-field">@(Model.Account == null ? "None" : Model.Account.Name)</div>
+</fieldset>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id=Model.Id }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>
+
+

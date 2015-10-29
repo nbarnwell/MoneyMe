@@ -1,0 +1,31 @@
+@model MoneyMe.Web.Models.Scaffolding.AccountTransactionCategoryMatchPattern
+
+@* This partial view defines form fields that will appear when creating and editing entities *@
+
+<div class="editor-label">
+    @Html.LabelFor(model => model.Pattern)
+</div>
+<div class="editor-field">
+    @Html.EditorFor(model => model.Pattern)
+    @Html.ValidationMessageFor(model => model.Pattern)
+</div>
+
+<div class="editor-label">
+    @Html.LabelFor(model => model.MatchMethodId)
+</div>
+<div class="editor-field">
+    @Html.EditorFor(model => model.MatchMethodId)
+    @Html.ValidationMessageFor(model => model.MatchMethodId)
+</div>
+
+<div class="editor-label">
+    AccountTransactionCategory
+</div>
+<div class="editor-field">
+    @Html.DropDownListFor(model => model.AccountTransactionCategoryId, ((IEnumerable<MoneyMe.Web.Models.Scaffolding.AccountTransactionCategory>)ViewBag.PossibleAccountTransactionCategories).Select(option => new SelectListItem {
+        Text = (option == null ? "None" : option.Name), 
+        Value = option.Id.ToString(),
+        Selected = (Model != null) && (option.Id == Model.AccountTransactionCategoryId)
+    }), "Choose...")
+    @Html.ValidationMessageFor(model => model.AccountTransactionCategoryId)
+</div>

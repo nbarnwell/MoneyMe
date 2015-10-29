@@ -1,0 +1,32 @@
+@model MoneyMe.Web.Models.Scaffolding.AggregateRootEvent
+
+@{
+    ViewBag.Title = "Delete";
+}
+
+<h2>Delete</h2>
+
+<h3>Are you sure you want to delete this?</h3>
+<fieldset>
+    <legend>AggregateRootEvent</legend>
+
+    <div class="display-label">AggregateId</div>
+    <div class="display-field">@Model.AggregateId</div>
+
+    <div class="display-label">Version</div>
+    <div class="display-field">@Model.Version</div>
+
+    <div class="display-label">Data</div>
+    <div class="display-field">@Model.Data</div>
+
+    <div class="display-label">AggregateRoot</div>
+    <div class="display-field">@Html.DisplayTextFor(_ => Model.AggregateRoot).ToString()</div>
+</fieldset>
+@using (Html.BeginForm()) {
+    <p>
+        <input type="submit" value="Delete" /> |
+        @Html.ActionLink("Back to List", "Index")
+    </p>
+}
+
+

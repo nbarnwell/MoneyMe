@@ -1,0 +1,29 @@
+@model MoneyMe.Web.Models.Scaffolding.BankAccount
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<fieldset>
+    <legend>BankAccount</legend>
+
+    <div class="display-label">BankName</div>
+    <div class="display-field">@Model.BankName</div>
+
+    <div class="display-label">AccountNumber</div>
+    <div class="display-field">@Model.AccountNumber</div>
+
+    <div class="display-label">SortCode</div>
+    <div class="display-field">@Model.SortCode</div>
+
+    <div class="display-label">Account</div>
+    <div class="display-field">@(Model.Account == null ? "None" : Model.Account.Name)</div>
+</fieldset>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id=Model.Id }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>
+
+

@@ -13,7 +13,7 @@
         <h2>Advanced Setup</h2>
         @foreach (var controllerName in (IEnumerable<string>)ViewBag.ControllerNames)
         {
-            <p>@Html.ActionLink(controllerName, "Index", controllerName)</p>
+            <p>@Html.ActionLink(controllerName, "Index", controllerName, new {Area = "Setup"}, new{})</p>
         }
         
     </div>

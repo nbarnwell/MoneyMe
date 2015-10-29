@@ -1,0 +1,26 @@
+@model MoneyMe.Web.Models.Scaffolding.Position
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<fieldset>
+    <legend>Position</legend>
+
+    <div class="display-label">Accounts</div>
+    <div class="display-field">@(Model.Accounts == null ? "None" : Model.Accounts.Count.ToString())</div>
+
+    <div class="display-label">Users</div>
+    <div class="display-field">@(Model.Users == null ? "None" : Model.Users.Count.ToString())</div>
+
+    <div class="display-label">UserPositions</div>
+    <div class="display-field">@(Model.UserPositions == null ? "None" : Model.UserPositions.Count.ToString())</div>
+</fieldset>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id=Model.Id }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>
+
+

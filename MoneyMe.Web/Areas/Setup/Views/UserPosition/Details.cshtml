@@ -1,0 +1,23 @@
+@model MoneyMe.Web.Models.Scaffolding.UserPosition
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<fieldset>
+    <legend>UserPosition</legend>
+
+    <div class="display-label">Position</div>
+    <div class="display-field">@Html.DisplayTextFor(_ => Model.Position).ToString()</div>
+
+    <div class="display-label">User</div>
+    <div class="display-field">@Html.DisplayTextFor(_ => Model.User).ToString()</div>
+</fieldset>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id=Model.Id }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>
+
+

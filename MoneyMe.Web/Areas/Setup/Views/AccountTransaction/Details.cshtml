@@ -1,0 +1,50 @@
+@model MoneyMe.Web.Models.Scaffolding.AccountTransaction
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<fieldset>
+    <legend>AccountTransaction</legend>
+
+    <div class="display-label">TransactionDate</div>
+    <div class="display-field">@Model.TransactionDate</div>
+
+    <div class="display-label">ReceiptDate</div>
+    <div class="display-field">@Model.ReceiptDate</div>
+
+    <div class="display-label">RecordedDate</div>
+    <div class="display-field">@Model.RecordedDate</div>
+
+    <div class="display-label">AccountTransactionStatusId</div>
+    <div class="display-field">@Model.AccountTransactionStatusId</div>
+
+    <div class="display-label">Amount</div>
+    <div class="display-field">@String.Format("{0:F}", Model.Amount)</div>
+
+    <div class="display-label">Payee</div>
+    <div class="display-field">@Model.Payee</div>
+
+    <div class="display-label">Description</div>
+    <div class="display-field">@Model.Description</div>
+
+    <div class="display-label">AccountTransactionAccountTransactionCategories</div>
+    <div class="display-field">@(Model.AccountTransactionAccountTransactionCategories == null ? "None" : Model.AccountTransactionAccountTransactionCategories.Count.ToString())</div>
+
+    <div class="display-label">AccountStatement</div>
+    <div class="display-field">@Html.DisplayTextFor(_ => Model.AccountStatement).ToString()</div>
+
+    <div class="display-label">AccountTransactionStatu</div>
+    <div class="display-field">@(Model.AccountTransactionStatu == null ? "None" : Model.AccountTransactionStatu.Name)</div>
+
+    <div class="display-label">AccountTransactionType</div>
+    <div class="display-field">@(Model.AccountTransactionType == null ? "None" : Model.AccountTransactionType.Name)</div>
+</fieldset>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id=Model.Id }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>
+
+

@@ -1,0 +1,95 @@
+@model IEnumerable<MoneyMe.Web.Models.Scaffolding.AccountTransaction>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table>
+    <tr>
+        <th></th>
+        <th>
+            TransactionDate
+        </th>
+        <th>
+            ReceiptDate
+        </th>
+        <th>
+            RecordedDate
+        </th>
+        <th>
+            AccountTransactionStatusId
+        </th>
+        <th>
+            Amount
+        </th>
+        <th>
+            Payee
+        </th>
+        <th>
+            Description
+        </th>
+        <th>
+            AccountTransactionAccountTransactionCategories
+        </th>
+        <th>
+            AccountStatement
+        </th>
+        <th>
+            AccountTransactionStatu
+        </th>
+        <th>
+            AccountTransactionType
+        </th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.Id }) |
+            @Html.ActionLink("Details", "Details", new { id=item.Id }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.Id })
+        </td>
+        <td>
+			@item.TransactionDate
+        </td>
+        <td>
+			@item.ReceiptDate
+        </td>
+        <td>
+			@item.RecordedDate
+        </td>
+        <td>
+			@item.AccountTransactionStatusId
+        </td>
+        <td>
+			@String.Format("{0:F}", item.Amount)
+        </td>
+        <td>
+			@item.Payee
+        </td>
+        <td>
+			@item.Description
+        </td>
+        <td>
+			@(item.AccountTransactionAccountTransactionCategories == null ? "None" : item.AccountTransactionAccountTransactionCategories.Count.ToString())
+        </td>
+        <td>
+			@Html.DisplayTextFor(_ => item.AccountStatement).ToString()
+        </td>
+        <td>
+			@(item.AccountTransactionStatu == null ? "None" : item.AccountTransactionStatu.Name)
+        </td>
+        <td>
+			@(item.AccountTransactionType == null ? "None" : item.AccountTransactionType.Name)
+        </td>
+    </tr>
+}
+
+</table>
+
+

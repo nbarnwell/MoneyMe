@@ -1,0 +1,29 @@
+@model MoneyMe.Web.Models.Scaffolding.AccountTransactionCategoryMatchPattern
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<fieldset>
+    <legend>AccountTransactionCategoryMatchPattern</legend>
+
+    <div class="display-label">Pattern</div>
+    <div class="display-field">@Model.Pattern</div>
+
+    <div class="display-label">MatchMethodId</div>
+    <div class="display-field">@Model.MatchMethodId</div>
+
+    <div class="display-label">AccountTransactionCategory</div>
+    <div class="display-field">@(Model.AccountTransactionCategory == null ? "None" : Model.AccountTransactionCategory.Name)</div>
+
+    <div class="display-label">AccountTransactionCategoryMatchPatternMatchMethod</div>
+    <div class="display-field">@(Model.AccountTransactionCategoryMatchPatternMatchMethod == null ? "None" : Model.AccountTransactionCategoryMatchPatternMatchMethod.Name)</div>
+</fieldset>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id=Model.Id }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>
+
+
