@@ -35,7 +35,6 @@ namespace MoneyMe.Web.Areas.Setup.Controllers
 
         public ActionResult Create()
         {
-            ViewBag.PossibleAspnetUsers = context.AspnetUsers;
             ViewBag.PossiblePositions = context.Positions;
             return View();
         } 
@@ -53,7 +52,6 @@ namespace MoneyMe.Web.Areas.Setup.Controllers
                 return RedirectToAction("Index");  
             }
 
-            ViewBag.PossibleAspnetUsers = context.AspnetUsers;
             ViewBag.PossiblePositions = context.Positions;
             return View(user);
         }
@@ -64,7 +62,6 @@ namespace MoneyMe.Web.Areas.Setup.Controllers
         public ActionResult Edit(int id)
         {
             User user = context.Users.Single(x => x.Id == id);
-            ViewBag.PossibleAspnetUsers = context.AspnetUsers;
             ViewBag.PossiblePositions = context.Positions;
             return View(user);
         }
@@ -81,7 +78,6 @@ namespace MoneyMe.Web.Areas.Setup.Controllers
                 context.SaveChanges();
                 return RedirectToAction("Index");
             }
-            ViewBag.PossibleAspnetUsers = context.AspnetUsers;
             ViewBag.PossiblePositions = context.Positions;
             return View(user);
         }

@@ -13,6 +13,9 @@
     <tr>
         <th></th>
         <th>
+            Name
+        </th>
+        <th>
             Accounts
         </th>
         <th>
@@ -29,6 +32,9 @@
             @Html.ActionLink("Edit", "Edit", new { id=item.Id }) |
             @Html.ActionLink("Details", "Details", new { id=item.Id }) |
             @Html.ActionLink("Delete", "Delete", new { id=item.Id })
+        </td>
+        <td>
+			@item.Name
         </td>
         <td>
 			@(item.Accounts == null ? "None" : item.Accounts.Count.ToString())

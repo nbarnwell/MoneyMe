@@ -10,6 +10,9 @@
 <fieldset>
     <legend>Position</legend>
 
+    <div class="display-label">Name</div>
+    <div class="display-field">@Model.Name</div>
+
     <div class="display-label">Accounts</div>
     <div class="display-field">@(Model.Accounts == null ? "None" : Model.Accounts.Count.ToString())</div>
 

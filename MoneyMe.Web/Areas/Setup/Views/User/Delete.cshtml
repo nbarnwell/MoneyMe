@@ -10,11 +10,14 @@
 <fieldset>
     <legend>User</legend>
 
+    <div class="display-label">AspNetUserId</div>
+    <div class="display-field">@Model.AspNetUserId</div>
+
     <div class="display-label">UserPositions</div>
     <div class="display-field">@(Model.UserPositions == null ? "None" : Model.UserPositions.Count.ToString())</div>
 
     <div class="display-label">Position</div>
-    <div class="display-field">@Html.DisplayTextFor(_ => Model.Position).ToString()</div>
+    <div class="display-field">@(Model.Position == null ? "None" : Model.Position.Name)</div>
 </fieldset>
 @using (Html.BeginForm()) {
     <p>

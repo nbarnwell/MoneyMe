@@ -13,6 +13,9 @@
     <tr>
         <th></th>
         <th>
+            AspNetUserId
+        </th>
+        <th>
             UserPositions
         </th>
         <th>
@@ -28,10 +31,13 @@
             @Html.ActionLink("Delete", "Delete", new { id=item.Id })
         </td>
         <td>
+			@item.AspNetUserId
+        </td>
+        <td>
 			@(item.UserPositions == null ? "None" : item.UserPositions.Count.ToString())
         </td>
         <td>
-			@Html.DisplayTextFor(_ => item.Position).ToString()
+			@(item.Position == null ? "None" : item.Position.Name)
         </td>
     </tr>
 }
