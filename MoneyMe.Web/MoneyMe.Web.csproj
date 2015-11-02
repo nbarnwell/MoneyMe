@@ -353,6 +353,7 @@
     <Content Include="Areas\Setup\Views\AggregateRootEvent\Details.cshtml" />
     <Content Include="Areas\Setup\Views\AggregateRootEvent\Index.cshtml" />
     <Content Include="Areas\Setup\Views\AggregateRootEvent\_CreateOrEdit.cshtml" />
+    <Content Include="Areas\Setup\Views\_ViewStart.cshtml" />
     <None Include="Scripts\jquery-2.1.4.intellisense.js" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
