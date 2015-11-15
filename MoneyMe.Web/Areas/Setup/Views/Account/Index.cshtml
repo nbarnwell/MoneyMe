@@ -61,7 +61,7 @@
 			@(item.Funds == null ? "None" : item.Funds.Count.ToString())
         </td>
         <td>
-			@Html.DisplayTextFor(_ => item.Position).ToString()
+			@(item.Position == null ? "None" : item.Position.Name)
         </td>
     </tr>
 }

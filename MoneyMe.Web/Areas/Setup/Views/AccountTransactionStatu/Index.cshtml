@@ -1,4 +1,4 @@
-@model IEnumerable<MoneyMe.Web.Models.Scaffolding.AccountTransactionCategoryMatchPattern>
+@model IEnumerable<MoneyMe.Web.Models.Scaffolding.AccountTransactionStatu>
 
 @{
     ViewBag.Title = "Index";
@@ -13,13 +13,10 @@
     <tr>
         <th></th>
         <th>
-            Pattern
+            Name
         </th>
         <th>
-            AccountTransactionCategory
-        </th>
-        <th>
-            AccountTransactionCategoryMatchPatternMatchMethod
+            AccountTransactions
         </th>
     </tr>
 
@@ -31,13 +28,10 @@
             @Html.ActionLink("Delete", "Delete", new { id=item.Id })
         </td>
         <td>
-			@item.Pattern
+			@item.Name
         </td>
         <td>
-			@(item.AccountTransactionCategory == null ? "None" : item.AccountTransactionCategory.Name)
-        </td>
-        <td>
-			@(item.AccountTransactionCategoryMatchPatternMatchMethod == null ? "None" : item.AccountTransactionCategoryMatchPatternMatchMethod.Name)
+			@(item.AccountTransactions == null ? "None" : item.AccountTransactions.Count.ToString())
         </td>
     </tr>
 }

@@ -28,7 +28,7 @@
             @Html.ActionLink("Delete", "Delete", new { id=item.Id })
         </td>
         <td>
-			@Html.DisplayTextFor(_ => item.Position).ToString()
+			@(item.Position == null ? "None" : item.Position.Name)
         </td>
         <td>
 			@Html.DisplayTextFor(_ => item.User).ToString()

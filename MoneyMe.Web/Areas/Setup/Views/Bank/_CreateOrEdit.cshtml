@@ -15,7 +15,7 @@
 </div>
 <div class="editor-field">
     @Html.DropDownListFor(model => model.PositionId, ((IEnumerable<MoneyMe.Web.Models.Scaffolding.Position>)ViewBag.PossiblePositions).Select(option => new SelectListItem {
-        Text = Html.DisplayTextFor(_ => option).ToString(), 
+        Text = (option == null ? "None" : option.Name), 
         Value = option.Id.ToString(),
         Selected = (Model != null) && (option.Id == Model.PositionId)
     }), "Choose...")

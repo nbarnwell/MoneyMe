@@ -16,7 +16,9 @@ namespace MoneyMe.Web.Controllers
                                           .Select(x => x.PropertyType)
                                           .Where(x => x.IsGenericType)
                                           .Where(x => typeof(IDbSet<>).IsAssignableFrom(x.GetGenericTypeDefinition()))
-                                          .Select(x => x.GetGenericArguments().First().Name);
+                                          .Select(x => x.GetGenericArguments().First())
+                                          .Where(x => !x.Name.StartsWith("Vw"))
+                                          .Select(x => x.Name);
 
             var content = string.Join("\r\n", types.Select(BuildScaffoldString).ToArray());
             return new FileContentResult(Encoding.UTF8.GetBytes(content), "text/plain");
@@ -24,7 +26,7 @@ namespace MoneyMe.Web.Controllers
 
         private string BuildScaffoldString(string typeName)
         {
-            return string.Format("Scaffold Controller -Area 'Setup' -ModelType '{0}' -ControllerName '{0}Controller' -DbContextType 'ScaffoldDbContext'", typeName);
+            return string.Format("Scaffold Controller -Area 'Setup' -ModelType '{0}' -ControllerName '{0}Controller' -DbContextType 'ScaffoldDbContext' -Force", typeName);
         }
     }
 }

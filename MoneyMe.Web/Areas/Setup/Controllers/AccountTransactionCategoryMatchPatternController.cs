@@ -18,7 +18,7 @@ namespace MoneyMe.Web.Areas.Setup.Controllers
 
         public ViewResult Index()
         {
-            return View(context.AccountTransactionCategoryMatchPatterns.Include(accounttransactioncategorymatchpattern => accounttransactioncategorymatchpattern.AccountTransactionCategory).ToList());
+            return View(context.AccountTransactionCategoryMatchPatterns.Include(accounttransactioncategorymatchpattern => accounttransactioncategorymatchpattern.AccountTransactionCategory).Include(accounttransactioncategorymatchpattern => accounttransactioncategorymatchpattern.AccountTransactionCategoryMatchPatternMatchMethod).ToList());
         }
 
         //
@@ -36,6 +36,7 @@ namespace MoneyMe.Web.Areas.Setup.Controllers
         public ActionResult Create()
         {
             ViewBag.PossibleAccountTransactionCategories = context.AccountTransactionCategories;
+            ViewBag.PossibleAccountTransactionCategoryMatchPatternMatchMethods = context.AccountTransactionCategoryMatchPatternMatchMethods;
             return View();
         } 
 
@@ -53,6 +54,7 @@ namespace MoneyMe.Web.Areas.Setup.Controllers
             }
 
             ViewBag.PossibleAccountTransactionCategories = context.AccountTransactionCategories;
+            ViewBag.PossibleAccountTransactionCategoryMatchPatternMatchMethods = context.AccountTransactionCategoryMatchPatternMatchMethods;
             return View(accounttransactioncategorymatchpattern);
         }
         
@@ -63,6 +65,7 @@ namespace MoneyMe.Web.Areas.Setup.Controllers
         {
             AccountTransactionCategoryMatchPattern accounttransactioncategorymatchpattern = context.AccountTransactionCategoryMatchPatterns.Single(x => x.Id == id);
             ViewBag.PossibleAccountTransactionCategories = context.AccountTransactionCategories;
+            ViewBag.PossibleAccountTransactionCategoryMatchPatternMatchMethods = context.AccountTransactionCategoryMatchPatternMatchMethods;
             return View(accounttransactioncategorymatchpattern);
         }
 
@@ -79,6 +82,7 @@ namespace MoneyMe.Web.Areas.Setup.Controllers
                 return RedirectToAction("Index");
             }
             ViewBag.PossibleAccountTransactionCategories = context.AccountTransactionCategories;
+            ViewBag.PossibleAccountTransactionCategoryMatchPatternMatchMethods = context.AccountTransactionCategoryMatchPatternMatchMethods;
             return View(accounttransactioncategorymatchpattern);
         }
 

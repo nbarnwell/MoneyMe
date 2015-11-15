@@ -28,7 +28,7 @@
     <div class="display-field">@(Model.Funds == null ? "None" : Model.Funds.Count.ToString())</div>
 
     <div class="display-label">Position</div>
-    <div class="display-field">@Html.DisplayTextFor(_ => Model.Position).ToString()</div>
+    <div class="display-field">@(Model.Position == null ? "None" : Model.Position.Name)</div>
 </fieldset>
 <p>
     @Html.ActionLink("Edit", "Edit", new { id=Model.Id }) |

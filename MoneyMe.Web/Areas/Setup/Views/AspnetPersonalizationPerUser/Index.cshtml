@@ -1,4 +1,4 @@
-@model IEnumerable<MoneyMe.Web.Models.Scaffolding.AccountTransactionCategoryMatchPattern>
+@model IEnumerable<MoneyMe.Web.Models.Scaffolding.AspnetPersonalizationPerUser>
 
 @{
     ViewBag.Title = "Index";
@@ -13,13 +13,19 @@
     <tr>
         <th></th>
         <th>
-            Pattern
+            PathId
         </th>
         <th>
-            AccountTransactionCategory
+            PageSettings
         </th>
         <th>
-            AccountTransactionCategoryMatchPatternMatchMethod
+            LastUpdatedDate
+        </th>
+        <th>
+            AspnetPaths
+        </th>
+        <th>
+            AspnetUsers
         </th>
     </tr>
 
@@ -31,13 +37,19 @@
             @Html.ActionLink("Delete", "Delete", new { id=item.Id })
         </td>
         <td>
-			@item.Pattern
+			@item.PathId
         </td>
         <td>
-			@(item.AccountTransactionCategory == null ? "None" : item.AccountTransactionCategory.Name)
+			@Html.DisplayTextFor(_ => item.PageSettings).ToString()
         </td>
         <td>
-			@(item.AccountTransactionCategoryMatchPatternMatchMethod == null ? "None" : item.AccountTransactionCategoryMatchPatternMatchMethod.Name)
+			@String.Format("{0:g}", item.LastUpdatedDate)
+        </td>
+        <td>
+			@Html.DisplayTextFor(_ => item.AspnetPaths).ToString()
+        </td>
+        <td>
+			@Html.DisplayTextFor(_ => item.AspnetUsers).ToString()
         </td>
     </tr>
 }

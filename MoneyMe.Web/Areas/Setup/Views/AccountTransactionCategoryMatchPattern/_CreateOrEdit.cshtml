@@ -11,14 +11,6 @@
 </div>
 
 <div class="editor-label">
-    @Html.LabelFor(model => model.MatchMethodId)
-</div>
-<div class="editor-field">
-    @Html.EditorFor(model => model.MatchMethodId)
-    @Html.ValidationMessageFor(model => model.MatchMethodId)
-</div>
-
-<div class="editor-label">
     AccountTransactionCategory
 </div>
 <div class="editor-field">
@@ -28,4 +20,15 @@
         Selected = (Model != null) && (option.Id == Model.AccountTransactionCategoryId)
     }), "Choose...")
     @Html.ValidationMessageFor(model => model.AccountTransactionCategoryId)
+</div>
+<div class="editor-label">
+    AccountTransactionCategoryMatchPatternMatchMethod
+</div>
+<div class="editor-field">
+    @Html.DropDownListFor(model => model.AccountTransactionCategoryMatchPatternMatchMethodId, ((IEnumerable<MoneyMe.Web.Models.Scaffolding.AccountTransactionCategoryMatchPatternMatchMethod>)ViewBag.PossibleAccountTransactionCategoryMatchPatternMatchMethods).Select(option => new SelectListItem {
+        Text = (option == null ? "None" : option.Name), 
+        Value = option.Id.ToString(),
+        Selected = (Model != null) && (option.Id == Model.AccountTransactionCategoryMatchPatternMatchMethodId)
+    }), "Choose...")
+    @Html.ValidationMessageFor(model => model.AccountTransactionCategoryMatchPatternMatchMethodId)
 </div>
