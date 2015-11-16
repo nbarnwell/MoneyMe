@@ -14,15 +14,15 @@ using MoneyMe.Web.Services;
 namespace MoneyMe.Web.Controllers
 {
     [Authorize]
-    public class AccountController : Controller
+    public class UserAccountController : Controller
     {
         private ApplicationUserManager _userManager;
 
-        public AccountController()
+        public UserAccountController()
         {
         }
 
-        public AccountController(ApplicationUserManager userManager, ApplicationSignInManager signInManager )
+        public UserAccountController(ApplicationUserManager userManager, ApplicationSignInManager signInManager )
         {
             UserManager = userManager;
             SignInManager = signInManager;
@@ -259,12 +259,12 @@ namespace MoneyMe.Web.Controllers
             if (user == null)
             {
                 // Don't reveal that the user does not exist
-                return RedirectToAction("ResetPasswordConfirmation", "Account");
+                return RedirectToAction("ResetPasswordConfirmation", "UserAccount");
             }
             var result = await UserManager.ResetPasswordAsync(user.Id, model.Code, model.Password);
             if (result.Succeeded)
             {
-                return RedirectToAction("ResetPasswordConfirmation", "Account");
+                return RedirectToAction("ResetPasswordConfirmation", "UserAccount");
             }
             AddErrors(result);
             return View();
@@ -286,7 +286,7 @@ namespace MoneyMe.Web.Controllers
         public ActionResult ExternalLogin(string provider, string returnUrl)
         {
             // Request a redirect to the external login provider
-            return new ChallengeResult(provider, Url.Action("ExternalLoginCallback", "Account", new { ReturnUrl = returnUrl }));
+            return new ChallengeResult(provider, Url.Action("ExternalLoginCallback", "UserAccount", new { ReturnUrl = returnUrl }));
         }
 
         //
