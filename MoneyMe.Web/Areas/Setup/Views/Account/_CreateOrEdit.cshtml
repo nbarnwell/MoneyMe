@@ -11,21 +11,13 @@
 </div>
 
 <div class="editor-label">
-    @Html.LabelFor(model => model.CreditLimit)
+    User
 </div>
 <div class="editor-field">
-    @Html.EditorFor(model => model.CreditLimit)
-    @Html.ValidationMessageFor(model => model.CreditLimit)
-</div>
-
-<div class="editor-label">
-    Position
-</div>
-<div class="editor-field">
-    @Html.DropDownListFor(model => model.PositionId, ((IEnumerable<MoneyMe.Web.Models.Scaffolding.Position>)ViewBag.PossiblePositions).Select(option => new SelectListItem {
-        Text = (option == null ? "None" : option.Name), 
+    @Html.DropDownListFor(model => model.UserId, ((IEnumerable<MoneyMe.Web.Models.Scaffolding.User>)ViewBag.PossibleUsers).Select(option => new SelectListItem {
+        Text = Html.DisplayTextFor(_ => option.Username).ToString(), 
         Value = option.Id.ToString(),
-        Selected = (Model != null) && (option.Id == Model.PositionId)
+        Selected = (Model != null) && (option.Id == Model.UserId)
     }), "Choose...")
-    @Html.ValidationMessageFor(model => model.PositionId)
+    @Html.ValidationMessageFor(model => model.UserId)
 </div>

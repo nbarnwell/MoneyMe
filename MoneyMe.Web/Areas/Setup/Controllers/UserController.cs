@@ -18,7 +18,7 @@ namespace MoneyMe.Web.Areas.Setup.Controllers
 
         public ViewResult Index()
         {
-            return View(context.Users.Include(user => user.Position).Include(user => user.UserPositions).ToList());
+            return View(context.Users.Include(user => user.Family).Include(user => user.Accounts).ToList());
         }
 
         //
@@ -35,7 +35,8 @@ namespace MoneyMe.Web.Areas.Setup.Controllers
 
         public ActionResult Create()
         {
-            ViewBag.PossiblePositions = context.Positions;
+            ViewBag.PossibleAspNetUsers = context.AspNetUsers;
+            ViewBag.PossibleFamilies = context.Families;
             return View();
         } 
 
@@ -52,7 +53,8 @@ namespace MoneyMe.Web.Areas.Setup.Controllers
                 return RedirectToAction("Index");  
             }
 
-            ViewBag.PossiblePositions = context.Positions;
+            ViewBag.PossibleAspNetUsers = context.AspNetUsers;
+            ViewBag.PossibleFamilies = context.Families;
             return View(user);
         }
         
@@ -62,7 +64,8 @@ namespace MoneyMe.Web.Areas.Setup.Controllers
         public ActionResult Edit(int id)
         {
             User user = context.Users.Single(x => x.Id == id);
-            ViewBag.PossiblePositions = context.Positions;
+            ViewBag.PossibleAspNetUsers = context.AspNetUsers;
+            ViewBag.PossibleFamilies = context.Families;
             return View(user);
         }
 
@@ -78,7 +81,8 @@ namespace MoneyMe.Web.Areas.Setup.Controllers
                 context.SaveChanges();
                 return RedirectToAction("Index");
             }
-            ViewBag.PossiblePositions = context.Positions;
+            ViewBag.PossibleAspNetUsers = context.AspNetUsers;
+            ViewBag.PossibleFamilies = context.Families;
             return View(user);
         }
 

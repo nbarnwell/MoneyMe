@@ -3,21 +3,32 @@
 @* This partial view defines form fields that will appear when creating and editing entities *@
 
 <div class="editor-label">
-    @Html.LabelFor(model => model.AspNetUserId)
+    @Html.LabelFor(model => model.Username)
 </div>
 <div class="editor-field">
-    @Html.EditorFor(model => model.AspNetUserId)
-    @Html.ValidationMessageFor(model => model.AspNetUserId)
+    @Html.EditorFor(model => model.Username)
+    @Html.ValidationMessageFor(model => model.Username)
 </div>
 
 <div class="editor-label">
-    Position
+    AspNetUser
 </div>
 <div class="editor-field">
-    @Html.DropDownListFor(model => model.PositionId, ((IEnumerable<MoneyMe.Web.Models.Scaffolding.Position>)ViewBag.PossiblePositions).Select(option => new SelectListItem {
+    @Html.DropDownListFor(model => model.AspNetUserId, ((IEnumerable<MoneyMe.Web.Models.Scaffolding.AspNetUser>)ViewBag.PossibleAspNetUsers).Select(option => new SelectListItem {
+        Text = (option == null ? "None" : option.UserName), 
+        Value = option.Id.ToString(),
+        Selected = (Model != null) && (option.Id == Model.AspNetUserId)
+    }), "Choose...")
+    @Html.ValidationMessageFor(model => model.AspNetUserId)
+</div>
+<div class="editor-label">
+    Family
+</div>
+<div class="editor-field">
+    @Html.DropDownListFor(model => model.FamilyId, ((IEnumerable<MoneyMe.Web.Models.Scaffolding.Family>)ViewBag.PossibleFamilies).Select(option => new SelectListItem {
         Text = (option == null ? "None" : option.Name), 
         Value = option.Id.ToString(),
-        Selected = (Model != null) && (option.Id == Model.PositionId)
+        Selected = (Model != null) && (option.Id == Model.FamilyId)
     }), "Choose...")
-    @Html.ValidationMessageFor(model => model.PositionId)
+    @Html.ValidationMessageFor(model => model.FamilyId)
 </div>

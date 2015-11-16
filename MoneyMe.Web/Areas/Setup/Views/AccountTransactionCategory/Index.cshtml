@@ -21,6 +21,9 @@
         <th>
             AccountTransactionCategoryMatchPatterns
         </th>
+        <th>
+            Family
+        </th>
     </tr>
 
 @foreach (var item in Model) {
@@ -38,6 +41,9 @@
         </td>
         <td>
 			@(item.AccountTransactionCategoryMatchPatterns == null ? "None" : item.AccountTransactionCategoryMatchPatterns.Count.ToString())
+        </td>
+        <td>
+			@(item.Family == null ? "None" : item.Family.Name)
         </td>
     </tr>
 }

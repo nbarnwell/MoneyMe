@@ -18,6 +18,9 @@
 
     <div class="display-label">AccountTransactionCategoryMatchPatterns</div>
     <div class="display-field">@(Model.AccountTransactionCategoryMatchPatterns == null ? "None" : Model.AccountTransactionCategoryMatchPatterns.Count.ToString())</div>
+
+    <div class="display-label">Family</div>
+    <div class="display-field">@(Model.Family == null ? "None" : Model.Family.Name)</div>
 </fieldset>
 @using (Html.BeginForm()) {
     <p>

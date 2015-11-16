@@ -18,7 +18,7 @@ namespace MoneyMe.Web.Areas.Setup.Controllers
 
         public ViewResult Index()
         {
-            return View(context.Accounts.Include(account => account.Position).Include(account => account.AccountStatements).Include(account => account.BankAccounts).Include(account => account.Budgets).Include(account => account.Funds).ToList());
+            return View(context.Accounts.Include(account => account.User).Include(account => account.AccountStatements).Include(account => account.BankAccounts).Include(account => account.Funds).ToList());
         }
 
         //
@@ -35,7 +35,7 @@ namespace MoneyMe.Web.Areas.Setup.Controllers
 
         public ActionResult Create()
         {
-            ViewBag.PossiblePositions = context.Positions;
+            ViewBag.PossibleUsers = context.Users.ToList();
             return View();
         } 
 
@@ -52,7 +52,7 @@ namespace MoneyMe.Web.Areas.Setup.Controllers
                 return RedirectToAction("Index");  
             }
 
-            ViewBag.PossiblePositions = context.Positions;
+            ViewBag.PossibleUsers = context.Users;
             return View(account);
         }
         
@@ -62,7 +62,7 @@ namespace MoneyMe.Web.Areas.Setup.Controllers
         public ActionResult Edit(int id)
         {
             Account account = context.Accounts.Single(x => x.Id == id);
-            ViewBag.PossiblePositions = context.Positions;
+            ViewBag.PossibleUsers = context.Users;
             return View(account);
         }
 
@@ -78,7 +78,7 @@ namespace MoneyMe.Web.Areas.Setup.Controllers
                 context.SaveChanges();
                 return RedirectToAction("Index");
             }
-            ViewBag.PossiblePositions = context.Positions;
+            ViewBag.PossibleUsers = context.Users;
             return View(account);
         }
 

@@ -1,0 +1,29 @@
+@model MoneyMe.Web.Models.Scaffolding.Family
+
+@{
+    ViewBag.Title = "Delete";
+}
+
+<h2>Delete</h2>
+
+<h3>Are you sure you want to delete this?</h3>
+<fieldset>
+    <legend>Family</legend>
+
+    <div class="display-label">Name</div>
+    <div class="display-field">@Model.Name</div>
+
+    <div class="display-label">AccountTransactionCategories</div>
+    <div class="display-field">@(Model.AccountTransactionCategories == null ? "None" : Model.AccountTransactionCategories.Count.ToString())</div>
+
+    <div class="display-label">Users</div>
+    <div class="display-field">@(Model.Users == null ? "None" : Model.Users.Count.ToString())</div>
+</fieldset>
+@using (Html.BeginForm()) {
+    <p>
+        <input type="submit" value="Delete" /> |
+        @Html.ActionLink("Back to List", "Index")
+    </p>
+}
+
+

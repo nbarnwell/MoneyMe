@@ -16,22 +16,16 @@
             Name
         </th>
         <th>
-            CreditLimit
-        </th>
-        <th>
             AccountStatements
         </th>
         <th>
             BankAccounts
         </th>
         <th>
-            Budgets
-        </th>
-        <th>
             Funds
         </th>
         <th>
-            Position
+            User
         </th>
     </tr>
 
@@ -46,22 +40,16 @@
 			@item.Name
         </td>
         <td>
-			@String.Format("{0:F}", item.CreditLimit)
-        </td>
-        <td>
 			@(item.AccountStatements == null ? "None" : item.AccountStatements.Count.ToString())
         </td>
         <td>
 			@(item.BankAccounts == null ? "None" : item.BankAccounts.Count.ToString())
         </td>
         <td>
-			@(item.Budgets == null ? "None" : item.Budgets.Count.ToString())
-        </td>
-        <td>
 			@(item.Funds == null ? "None" : item.Funds.Count.ToString())
         </td>
         <td>
-			@(item.Position == null ? "None" : item.Position.Name)
+			@Html.DisplayTextFor(_ => item.User).ToString()
         </td>
     </tr>
 }

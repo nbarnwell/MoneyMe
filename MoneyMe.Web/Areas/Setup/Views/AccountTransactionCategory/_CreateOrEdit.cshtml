@@ -10,3 +10,14 @@
     @Html.ValidationMessageFor(model => model.Name)
 </div>
 
+<div class="editor-label">
+    Family
+</div>
+<div class="editor-field">
+    @Html.DropDownListFor(model => model.FamilyId, ((IEnumerable<MoneyMe.Web.Models.Scaffolding.Family>)ViewBag.PossibleFamilies).Select(option => new SelectListItem {
+        Text = (option == null ? "None" : option.Name), 
+        Value = option.Id.ToString(),
+        Selected = (Model != null) && (option.Id == Model.FamilyId)
+    }), "Choose...")
+    @Html.ValidationMessageFor(model => model.FamilyId)
+</div>

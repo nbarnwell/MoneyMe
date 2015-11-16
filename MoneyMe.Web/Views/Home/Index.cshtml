@@ -1,4 +1,5 @@
 ﻿@using System.Collections
+@using MoneyMe.Web.Controllers
 @{
     ViewBag.Title = "Home Page";
 }
@@ -10,10 +11,19 @@
         
     </div>
     <div class="col-md-4">
-        <h2>Advanced Setup</h2>
-        @foreach (var controllerName in (IEnumerable<string>)ViewBag.ControllerNames)
+        <h2>Setup</h2>
+        <p>@Html.ActionLink("Families", "Create", "Family", new {Area = "Setup"}, new{})</p>
+        <p>@Html.ActionLink("User", "Index", "User", new {Area = "Setup"}, new{})</p>
+        <p>@Html.ActionLink("Bank", "Index", "Bank", new {Area = "Setup"}, new{})</p>
+        <p>@Html.ActionLink("Account", "Index", "Account", new {Area = "Setup"}, new{})</p>
+        <p>@Html.ActionLink("BankAccount", "Index", "BankAccount", new {Area = "Setup"}, new{})</p>
+    </div>
+
+    <div class="col-md-4">
+        <h2>Super-Advanced Setup</h2>
+        @foreach (var controller in (IEnumerable<ControllerViewModel>)ViewBag.Controllers)
         {
-            <p>@Html.ActionLink(controllerName, "Index", controllerName, new {Area = "Setup"}, new{})</p>
+            <p>@Html.ActionLink(controller.DisplayName, "Index", controller.Name, new {Area = controller.Area}, new{})</p>
         }
         
     </div>

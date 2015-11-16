@@ -1,0 +1,26 @@
+@model MoneyMe.Web.Models.Scaffolding.AspNetUserClaim
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<fieldset>
+    <legend>AspNetUserClaim</legend>
+
+    <div class="display-label">ClaimType</div>
+    <div class="display-field">@Model.ClaimType</div>
+
+    <div class="display-label">ClaimValue</div>
+    <div class="display-field">@Model.ClaimValue</div>
+
+    <div class="display-label">AspNetUser</div>
+    <div class="display-field">@Html.DisplayTextFor(_ => Model.AspNetUser).ToString()</div>
+</fieldset>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id=Model.Id }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>
+
+

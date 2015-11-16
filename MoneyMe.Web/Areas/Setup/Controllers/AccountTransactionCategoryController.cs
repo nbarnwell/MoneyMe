@@ -18,7 +18,7 @@ namespace MoneyMe.Web.Areas.Setup.Controllers
 
         public ViewResult Index()
         {
-            return View(context.AccountTransactionCategories.Include(accounttransactioncategory => accounttransactioncategory.AccountTransactionCategoryMatchPatterns).ToList());
+            return View(context.AccountTransactionCategories.Include(accounttransactioncategory => accounttransactioncategory.Family).Include(accounttransactioncategory => accounttransactioncategory.AccountTransactionCategoryMatchPatterns).ToList());
         }
 
         //
@@ -35,6 +35,7 @@ namespace MoneyMe.Web.Areas.Setup.Controllers
 
         public ActionResult Create()
         {
+            ViewBag.PossibleFamilies = context.Families;
             return View();
         } 
 
@@ -51,6 +52,7 @@ namespace MoneyMe.Web.Areas.Setup.Controllers
                 return RedirectToAction("Index");  
             }
 
+            ViewBag.PossibleFamilies = context.Families;
             return View(accounttransactioncategory);
         }
         
@@ -60,6 +62,7 @@ namespace MoneyMe.Web.Areas.Setup.Controllers
         public ActionResult Edit(int id)
         {
             AccountTransactionCategory accounttransactioncategory = context.AccountTransactionCategories.Single(x => x.Id == id);
+            ViewBag.PossibleFamilies = context.Families;
             return View(accounttransactioncategory);
         }
 
@@ -75,6 +78,7 @@ namespace MoneyMe.Web.Areas.Setup.Controllers
                 context.SaveChanges();
                 return RedirectToAction("Index");
             }
+            ViewBag.PossibleFamilies = context.Families;
             return View(accounttransactioncategory);
         }
 

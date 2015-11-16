@@ -12,6 +12,9 @@
     <div class="display-label">Name</div>
     <div class="display-field">@Model.Name</div>
 
+    <div class="display-label">BankAccounts</div>
+    <div class="display-field">@(Model.BankAccounts == null ? "None" : Model.BankAccounts.Count.ToString())</div>
+
     <div class="display-label">BankSpecificTransactionTypes</div>
     <div class="display-field">@(Model.BankSpecificTransactionTypes == null ? "None" : Model.BankSpecificTransactionTypes.Count.ToString())</div>
 </fieldset>

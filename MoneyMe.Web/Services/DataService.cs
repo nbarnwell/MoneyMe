@@ -55,19 +55,9 @@ namespace MoneyMe.Web.Services
             Execute(
                 c =>
                 {
-                    var positionId = c.ExecuteScalar<int>(
-                        @"insert into Position (Name) values (@Name);
-                        select scope_identity();",
-                        new { Name = aspNetUser.UserName });
-
-                    var userId = c.ExecuteScalar<int>(
-                        @"insert into [User] (AspNetUserId, PositionId) values (@aspNetUserId, @positionId);
-                        select scope_identity();",
-                        new { aspNetUserId = aspNetUser.Id, positionId });
-
-                    c.Execute(
-                        @"insert into UserPosition (UserId, PositionId) values (@userId, @positionId);",
-                        new { userId, positionId });
+                    c.ExecuteScalar<int>(
+                        @"insert into [User] (Username, AspNetUserId) values (@username, @aspNetUserId);",
+                        new { username = aspNetUser.UserName, aspNetUserId = aspNetUser.Id });
                 });
         }
 

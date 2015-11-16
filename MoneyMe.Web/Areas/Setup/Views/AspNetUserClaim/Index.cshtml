@@ -1,0 +1,47 @@
+@model IEnumerable<MoneyMe.Web.Models.Scaffolding.AspNetUserClaim>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table>
+    <tr>
+        <th></th>
+        <th>
+            ClaimType
+        </th>
+        <th>
+            ClaimValue
+        </th>
+        <th>
+            AspNetUser
+        </th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.Id }) |
+            @Html.ActionLink("Details", "Details", new { id=item.Id }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.Id })
+        </td>
+        <td>
+			@item.ClaimType
+        </td>
+        <td>
+			@item.ClaimValue
+        </td>
+        <td>
+			@Html.DisplayTextFor(_ => item.AspNetUser).ToString()
+        </td>
+    </tr>
+}
+
+</table>
+
+

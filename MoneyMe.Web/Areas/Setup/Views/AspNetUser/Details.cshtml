@@ -1,0 +1,59 @@
+@model MoneyMe.Web.Models.Scaffolding.AspNetUser
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<fieldset>
+    <legend>AspNetUser</legend>
+
+    <div class="display-label">Email</div>
+    <div class="display-field">@Model.Email</div>
+
+    <div class="display-label">EmailConfirmed</div>
+    <div class="display-field">@Model.EmailConfirmed</div>
+
+    <div class="display-label">PasswordHash</div>
+    <div class="display-field">@Model.PasswordHash</div>
+
+    <div class="display-label">SecurityStamp</div>
+    <div class="display-field">@Model.SecurityStamp</div>
+
+    <div class="display-label">PhoneNumber</div>
+    <div class="display-field">@Model.PhoneNumber</div>
+
+    <div class="display-label">PhoneNumberConfirmed</div>
+    <div class="display-field">@Model.PhoneNumberConfirmed</div>
+
+    <div class="display-label">TwoFactorEnabled</div>
+    <div class="display-field">@Model.TwoFactorEnabled</div>
+
+    <div class="display-label">LockoutEndDateUtc</div>
+    <div class="display-field">@String.Format("{0:g}", Model.LockoutEndDateUtc)</div>
+
+    <div class="display-label">LockoutEnabled</div>
+    <div class="display-field">@Model.LockoutEnabled</div>
+
+    <div class="display-label">AccessFailedCount</div>
+    <div class="display-field">@Model.AccessFailedCount</div>
+
+    <div class="display-label">UserName</div>
+    <div class="display-field">@Model.UserName</div>
+
+    <div class="display-label">AspNetRoles</div>
+    <div class="display-field">@(Model.AspNetRoles == null ? "None" : Model.AspNetRoles.Count.ToString())</div>
+
+    <div class="display-label">AspNetUserClaims</div>
+    <div class="display-field">@(Model.AspNetUserClaims == null ? "None" : Model.AspNetUserClaims.Count.ToString())</div>
+
+    <div class="display-label">AspNetUserLogins</div>
+    <div class="display-field">@(Model.AspNetUserLogins == null ? "None" : Model.AspNetUserLogins.Count.ToString())</div>
+</fieldset>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id=Model.Id }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>
+
+

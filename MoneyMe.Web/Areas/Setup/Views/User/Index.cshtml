@@ -13,13 +13,13 @@
     <tr>
         <th></th>
         <th>
-            AspNetUserId
+            Username
         </th>
         <th>
-            UserPositions
+            Accounts
         </th>
         <th>
-            Position
+            Family
         </th>
     </tr>
 
@@ -31,13 +31,13 @@
             @Html.ActionLink("Delete", "Delete", new { id=item.Id })
         </td>
         <td>
-			@item.AspNetUserId
+			@item.Username
         </td>
         <td>
-			@(item.UserPositions == null ? "None" : item.UserPositions.Count.ToString())
+			@(item.Accounts == null ? "None" : item.Accounts.Count.ToString())
         </td>
         <td>
-			@(item.Position == null ? "None" : item.Position.Name)
+			@(item.Family == null ? "None" : item.Family.Name)
         </td>
     </tr>
 }

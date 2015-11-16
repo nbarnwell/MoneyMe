@@ -16,6 +16,9 @@
             Name
         </th>
         <th>
+            BankAccounts
+        </th>
+        <th>
             BankSpecificTransactionTypes
         </th>
     </tr>
@@ -29,6 +32,9 @@
         </td>
         <td>
 			@item.Name
+        </td>
+        <td>
+			@(item.BankAccounts == null ? "None" : item.BankAccounts.Count.ToString())
         </td>
         <td>
 			@(item.BankSpecificTransactionTypes == null ? "None" : item.BankSpecificTransactionTypes.Count.ToString())

@@ -18,7 +18,7 @@ namespace MoneyMe.Web.Areas.Setup.Controllers
 
         public ViewResult Index()
         {
-            return View(context.Banks.Include(bank => bank.BankSpecificTransactionTypes).ToList());
+            return View(context.Banks.Include(bank => bank.BankAccounts).Include(bank => bank.BankSpecificTransactionTypes).ToList());
         }
 
         //
@@ -35,7 +35,6 @@ namespace MoneyMe.Web.Areas.Setup.Controllers
 
         public ActionResult Create()
         {
-            ViewBag.PossiblePositions = context.Positions;
             return View();
         } 
 
@@ -52,7 +51,6 @@ namespace MoneyMe.Web.Areas.Setup.Controllers
                 return RedirectToAction("Index");  
             }
 
-            ViewBag.PossiblePositions = context.Positions;
             return View(bank);
         }
         
@@ -62,7 +60,6 @@ namespace MoneyMe.Web.Areas.Setup.Controllers
         public ActionResult Edit(int id)
         {
             Bank bank = context.Banks.Single(x => x.Id == id);
-            ViewBag.PossiblePositions = context.Positions;
             return View(bank);
         }
 
@@ -78,7 +75,6 @@ namespace MoneyMe.Web.Areas.Setup.Controllers
                 context.SaveChanges();
                 return RedirectToAction("Index");
             }
-            ViewBag.PossiblePositions = context.Positions;
             return View(bank);
         }
 

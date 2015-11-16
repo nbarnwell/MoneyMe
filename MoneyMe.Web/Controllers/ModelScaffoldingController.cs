@@ -20,7 +20,7 @@ namespace MoneyMe.Web.Controllers
                                           .Where(x => !x.Name.StartsWith("Vw"))
                                           .Select(x => x.Name);
 
-            var content = string.Join("\r\n", types.Select(BuildScaffoldString).ToArray());
+            var content = string.Join("\r\n", types.Select(BuildScaffoldString).ToArray()) + "\r\n";
             return new FileContentResult(Encoding.UTF8.GetBytes(content), "text/plain");
         }
 

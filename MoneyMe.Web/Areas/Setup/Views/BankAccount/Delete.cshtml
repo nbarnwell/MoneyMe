@@ -10,6 +10,9 @@
 <fieldset>
     <legend>BankAccount</legend>
 
+    <div class="display-label">CreditLimit</div>
+    <div class="display-field">@String.Format("{0:F}", Model.CreditLimit)</div>
+
     <div class="display-label">BankName</div>
     <div class="display-field">@Model.BankName</div>
 
@@ -21,6 +24,9 @@
 
     <div class="display-label">Account</div>
     <div class="display-field">@(Model.Account == null ? "None" : Model.Account.Name)</div>
+
+    <div class="display-label">Bank</div>
+    <div class="display-field">@(Model.Bank == null ? "None" : Model.Bank.Name)</div>
 </fieldset>
 @using (Html.BeginForm()) {
     <p>

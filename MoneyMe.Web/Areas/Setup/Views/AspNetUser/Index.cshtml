@@ -1,0 +1,113 @@
+@model IEnumerable<MoneyMe.Web.Models.Scaffolding.AspNetUser>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table>
+    <tr>
+        <th></th>
+        <th>
+            Email
+        </th>
+        <th>
+            EmailConfirmed
+        </th>
+        <th>
+            PasswordHash
+        </th>
+        <th>
+            SecurityStamp
+        </th>
+        <th>
+            PhoneNumber
+        </th>
+        <th>
+            PhoneNumberConfirmed
+        </th>
+        <th>
+            TwoFactorEnabled
+        </th>
+        <th>
+            LockoutEndDateUtc
+        </th>
+        <th>
+            LockoutEnabled
+        </th>
+        <th>
+            AccessFailedCount
+        </th>
+        <th>
+            UserName
+        </th>
+        <th>
+            AspNetRoles
+        </th>
+        <th>
+            AspNetUserClaims
+        </th>
+        <th>
+            AspNetUserLogins
+        </th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.Id }) |
+            @Html.ActionLink("Details", "Details", new { id=item.Id }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.Id })
+        </td>
+        <td>
+			@item.Email
+        </td>
+        <td>
+			@item.EmailConfirmed
+        </td>
+        <td>
+			@item.PasswordHash
+        </td>
+        <td>
+			@item.SecurityStamp
+        </td>
+        <td>
+			@item.PhoneNumber
+        </td>
+        <td>
+			@item.PhoneNumberConfirmed
+        </td>
+        <td>
+			@item.TwoFactorEnabled
+        </td>
+        <td>
+			@String.Format("{0:g}", item.LockoutEndDateUtc)
+        </td>
+        <td>
+			@item.LockoutEnabled
+        </td>
+        <td>
+			@item.AccessFailedCount
+        </td>
+        <td>
+			@item.UserName
+        </td>
+        <td>
+			@(item.AspNetRoles == null ? "None" : item.AspNetRoles.Count.ToString())
+        </td>
+        <td>
+			@(item.AspNetUserClaims == null ? "None" : item.AspNetUserClaims.Count.ToString())
+        </td>
+        <td>
+			@(item.AspNetUserLogins == null ? "None" : item.AspNetUserLogins.Count.ToString())
+        </td>
+    </tr>
+}
+
+</table>
+
+
