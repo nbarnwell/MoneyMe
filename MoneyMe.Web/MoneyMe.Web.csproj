@@ -367,12 +367,6 @@
     <Content Include="Areas\Setup\Views\User\Details.cshtml" />
     <Content Include="Areas\Setup\Views\User\Index.cshtml" />
     <Content Include="Areas\Setup\Views\User\_CreateOrEdit.cshtml" />
-    <None Include="Areas\Setup\Views\Web.Debug.config">
-      <DependentUpon>Web.config</DependentUpon>
-    </None>
-    <None Include="Areas\Setup\Views\Web.Release.config">
-      <DependentUpon>Web.config</DependentUpon>
-    </None>
     <Content Include="Areas\Setup\Views\_ViewStart.cshtml" />
     <None Include="Scripts\jquery-2.1.4.intellisense.js" />
     <Content Include="Scripts\bootstrap.js" />
