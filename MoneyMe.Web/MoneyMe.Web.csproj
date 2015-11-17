@@ -197,13 +197,16 @@
     <Compile Include="Areas\Setup\Controllers\BankAccountController.cs" />
     <Compile Include="Areas\Setup\Controllers\BankController.cs" />
     <Compile Include="Areas\Setup\Controllers\BankSpecificTransactionTypeController.cs" />
+    <Compile Include="Areas\Setup\Controllers\ControllerViewModel.cs" />
     <Compile Include="Areas\Setup\Controllers\FamilyController.cs" />
     <Compile Include="Areas\Setup\Controllers\FundController.cs" />
+    <Compile Include="Areas\Setup\Controllers\HomeController.cs" />
     <Compile Include="Areas\Setup\Controllers\UserController.cs" />
     <Compile Include="Areas\Setup\SetupAreaRegistration.cs" />
+    <Compile Include="Controllers\AccountController.cs" />
+    <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\UserAccountController.cs" />
     <Compile Include="Controllers\ModelScaffoldingController.cs" />
-    <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ImportController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
     <Compile Include="Controllers\AccountTransactionController.cs" />
@@ -407,7 +410,7 @@
     <Content Include="Views\_ViewStart.cshtml" />
     <Content Include="Views\Shared\Error.cshtml" />
     <Content Include="Views\Shared\_Layout.cshtml" />
-    <Content Include="Views\Home\Index.cshtml" />
+    <Content Include="Areas\Setup\Views\Home\Index.cshtml" />
     <Content Include="Views\Manage\AddPhoneNumber.cshtml" />
     <Content Include="Views\Manage\ChangePassword.cshtml" />
     <Content Include="Views\Manage\Index.cshtml" />
@@ -433,6 +436,7 @@
     <Content Include="Views\UserAccount\_ExternalLoginsListPartial.cshtml" />
     <Content Include="Views\UserAccount\_RemoveAccountPartial.cshtml" />
     <Content Include="Views\UserAccount\_SetPasswordPartial.cshtml" />
+    <Content Include="Views\Home\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
