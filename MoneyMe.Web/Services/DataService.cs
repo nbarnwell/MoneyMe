@@ -8,6 +8,7 @@ using System.Transactions;
 using Dapper;
 using MoneyMe.Web.Models;
 using MoneyMe.Web.Models.AccountTransactionHandling;
+using MoneyMe.Web.Models.BankAccount;
 using IsolationLevel = System.Transactions.IsolationLevel;
 
 namespace MoneyMe.Web.Services
@@ -80,10 +81,10 @@ namespace MoneyMe.Web.Services
                     @"select Id, Name, IsIncome from AccountTransactionType order by Name;"));
         }
 
-        public static IEnumerable<AccountViewModel> GetAccounts()
+        public static IEnumerable<BankAccountViewModel> GetAccounts()
         {
             return Execute(
-                c => c.Query<AccountViewModel>(
+                c => c.Query<BankAccountViewModel>(
                     @"select a.* 
                         from Account a
                         inner join Position p on a.PositionId = p.Id

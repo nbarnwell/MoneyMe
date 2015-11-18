@@ -203,7 +203,7 @@
     <Compile Include="Areas\Setup\Controllers\HomeController.cs" />
     <Compile Include="Areas\Setup\Controllers\UserController.cs" />
     <Compile Include="Areas\Setup\SetupAreaRegistration.cs" />
-    <Compile Include="Controllers\AccountController.cs" />
+    <Compile Include="Controllers\BankAccountController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\UserAccountController.cs" />
     <Compile Include="Controllers\ModelScaffoldingController.cs" />
@@ -217,8 +217,10 @@
     <Compile Include="Models\AccountTransactionHandling\CategoryViewModel.cs" />
     <Compile Include="Models\AccountTransactionHandling\CreateAccountTransactionViewModel.cs" />
     <Compile Include="Models\AccountTransactionHandling\SetCategoriesViewModel.cs" />
-    <Compile Include="Models\AccountViewModel.cs" />
-    <Compile Include="Models\AccountViewModels.cs" />
+    <Compile Include="Models\BankAccount\BankAccountStatementViewModel.cs" />
+    <Compile Include="Models\BankAccount\BankAccountViewModel.cs" />
+    <Compile Include="Models\BankAccount\BankAccountWithStatementsViewModel.cs" />
+    <Compile Include="Models\UserAccountViewModels.cs" />
     <Compile Include="Models\IdentityModels.cs" />
     <Compile Include="Models\IdNameViewModel.cs" />
     <Compile Include="Models\ManageViewModels.cs" />
@@ -437,6 +439,8 @@
     <Content Include="Views\UserAccount\_RemoveAccountPartial.cshtml" />
     <Content Include="Views\UserAccount\_SetPasswordPartial.cshtml" />
     <Content Include="Views\Home\Index.cshtml" />
+    <Content Include="Views\BankAccount\Details.cshtml" />
+    <Content Include="Views\BankAccount\RecordPurchase.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

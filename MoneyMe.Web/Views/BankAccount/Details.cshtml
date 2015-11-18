@@ -1,0 +1,22 @@
+﻿@model MoneyMe.Web.Models.BankAccount.BankAccountWithStatementsViewModel
+
+@{
+    ViewBag.Title = "Account Details for " + Model.Name;
+}
+
+<div class="row">
+    <div class="col-md-6">
+        <h2>@Model.Name</h2>
+        <h3>Current Balance: @Html.DisplayTextFor(m => m.CurrentBalance)</h3>
+    </div>
+    <div class="col-md-4">
+        <div class="panel">
+            <div class="panel-heading">
+                Tasks
+            </div>
+            <div class="panel-body">
+                <p>@Html.ActionLink("Record Purchase", "RecordPurchase", new { bankAccountId = Model.Id })</p>
+            </div>
+        </div>
+    </div>
+</div>
