@@ -354,7 +354,7 @@ namespace MoneyMe.Web.Models.Scaffolding
         public int Id { get; set; } // Id (Primary key)
         public int? AccountStatementId { get; set; } // AccountStatementId
         public DateTimeOffset? TransactionDate { get; set; } // TransactionDate
-        public DateTimeOffset? ReceiptDate { get; set; } // ReceiptDate
+        public DateTimeOffset? ReceiptDate { get; set; } // TransactionTime
         public DateTimeOffset RecordedDate { get; set; } // RecordedDate
         public int AccountTransactionStatusId { get; set; } // AccountTransactionStatusId
         public decimal Amount { get; set; } // Amount
@@ -712,7 +712,7 @@ namespace MoneyMe.Web.Models.Scaffolding
             Property(x => x.Id).HasColumnName("Id").IsRequired().HasDatabaseGeneratedOption(DatabaseGeneratedOption.Identity);
             Property(x => x.AccountStatementId).HasColumnName("AccountStatementId").IsOptional();
             Property(x => x.TransactionDate).HasColumnName("TransactionDate").IsOptional();
-            Property(x => x.ReceiptDate).HasColumnName("ReceiptDate").IsOptional();
+            Property(x => x.ReceiptDate).HasColumnName("TransactionTime").IsOptional();
             Property(x => x.RecordedDate).HasColumnName("RecordedDate").IsRequired();
             Property(x => x.AccountTransactionStatusId).HasColumnName("AccountTransactionStatusId").IsRequired();
             Property(x => x.Amount).HasColumnName("Amount").IsRequired().HasPrecision(19,4);

@@ -22,7 +22,7 @@ namespace MoneyMe.Web.Controllers
         {
             var row = new
             {
-                ReceiptDate                = data.ReceiptDate,
+                TransactionTime            = data.TransactionTime,
                 RecordedDate               = DateTimeOffset.UtcNow,
                 AccountTransactionStatusId = 1, // Recorded
                 Amount                     = data.Amount,
@@ -35,21 +35,23 @@ namespace MoneyMe.Web.Controllers
                 DataService.Execute(
                     c => c.ExecuteScalar<int>(
                         @"insert into AccountTransaction (
-                        ReceiptDate,
-                        RecordedDate,
-                        AccountTransactionStatusId,
-                        Amount,
-                        Description,
-                        AccountTransactionTypeId
-                    ) values (
-                        @ReceiptDate,
-                        @RecordedDate,
-                        @AccountTransactionStatusId,
-                        @Amount,
-                        @Description,
-                        @AccountTransactionTypeId
-                    );
-                    select scope_identity();",
+                            TransactionTime,
+                            RecordedDate,
+                            AccountTransactionStatusId,
+                            Amount,
+                            Payee,
+                            Description,
+                            AccountTransactionTypeId
+                        ) values (
+                            @TransactionTime,
+                            @RecordedDate,
+                            @AccountTransactionStatusId,
+                            @Amount,
+                            @Payee,
+                            @Description,
+                            @AccountTransactionTypeId
+                        );
+                        select scope_identity();",
                         row));
 
             return RedirectToAction("SetCategories", new { transactionId, description = data.Description });
@@ -58,9 +60,9 @@ namespace MoneyMe.Web.Controllers
         [HttpGet]
         public ActionResult SetCategories(int transactionId, string description)
         {
-            var categories = DataService.GetCategories();
-            var categoryList = categories.Select(x => new CategoryViewModel { Id = x.Id, Name = x.Name }).ToList();
-            var suggestedCategories = CategoryService.SuggestCategories(categories, description);
+            var categories            = DataService.GetCategories();
+            var categoryList          = categories.Select(x => new CategoryViewModel { Id = x.Id, Name = x.Name }).ToList();
+            var suggestedCategories   = CategoryService.SuggestCategories(categories, description);
             var suggestedCategoryList = suggestedCategories.Select(x => new CategoryViewModel { Id = x.Id, Name = x.Name }).ToList();
 
             ViewBag.Categories = categoryList;
@@ -68,7 +70,7 @@ namespace MoneyMe.Web.Controllers
 
             var vm = new SetCategoriesViewModel
             {
-                TransactionId = transactionId,
+                TransactionId = transactionId
             };
 
             return View(vm);

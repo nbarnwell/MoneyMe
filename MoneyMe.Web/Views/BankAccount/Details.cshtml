@@ -15,7 +15,7 @@
                 Tasks
             </div>
             <div class="panel-body">
-                <p>@Html.ActionLink("Record Purchase", "RecordPurchase", new { bankAccountId = Model.Id })</p>
+                <p>@Html.ActionLink("Record Purchase", "Create", new { controller = "AccountTransaction", bankAccountId = Model.Id })</p>
             </div>
         </div>
     </div>

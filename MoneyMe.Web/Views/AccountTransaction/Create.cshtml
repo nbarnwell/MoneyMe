@@ -7,7 +7,8 @@
 <h2>@ViewBag.Title</h2>
 @section scripts
 {
-    @Scripts.Render("~/bundles/moment");
+    @Scripts.Render("~/bundles/moment")
+    <script src="@Url.Content("~/Views/AccountTransaction/create.js")"></script>
 }
 <div class="row">
     <div class="col-md-4">
@@ -17,8 +18,8 @@
             <h4>Transaction Details</h4>
             <hr />
             <div class="form-group">
-                @Html.LabelFor(m => m.ReceiptDate)
-                @Html.TextBoxFor(m => m.ReceiptDate, new { @class = "form-control"})
+                @Html.LabelFor(m => m.TransactionTime)
+                @Html.TextBoxFor(m => m.TransactionTime, new { @class = "form-control"})
             </div>
             <div class="form-group">
                 @Html.LabelFor(m => m.Amount)

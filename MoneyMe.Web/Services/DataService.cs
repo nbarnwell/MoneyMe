@@ -87,9 +87,7 @@ namespace MoneyMe.Web.Services
                 c => c.Query<BankAccountViewModel>(
                     @"select a.* 
                         from Account a
-                        inner join Position p on a.PositionId = p.Id
-                        inner join UserPosition up on p.Id = up.PositionId
-                        inner join [User] u on up.UserId = u.Id
+                        inner join [User] u on a.UserId = u.Id
                         where u.Id = @userId;",
                     new { userId = Context.GetUserId() })
                     .ToList());

@@ -1,1 +1,44 @@
-﻿Hello
+﻿@model MoneyMe.Web.Models.AccountTransactionHandling.CreateAccountTransactionViewModel
+
+@{
+    ViewBag.Title = "Record Purchase";
+}
+
+<h2>@ViewBag.Title</h2>
+@section scripts
+{
+    @Scripts.Render("~/bundles/moment");
+}
+<div class="row">
+    <div class="col-md-4">
+        @using (Html.BeginForm("Create", "Purchase", FormMethod.Post, new { role = "form" }))
+        {
+            @Html.AntiForgeryToken()
+            <h4>Transaction Details</h4>
+            <hr />
+            <div class="form-group">
+                @Html.LabelFor(m => m.TransactionTime)
+                @Html.TextBoxFor(m => m.TransactionTime, new { @class = "form-control" })
+            </div>
+            <div class="form-group">
+                @Html.LabelFor(m => m.Amount)
+                @Html.TextBoxFor(m => m.Amount, new { @class = "form-control" })
+            </div>
+            <div class="form-group">
+                @Html.LabelFor(m => m.Payee)
+                @Html.TextBoxFor(m => m.Payee, new { @class = "form-control" })
+            </div>
+            <div class="form-group">
+                @Html.LabelFor(m => m.Description)
+                @Html.TextBoxFor(m => m.Description, new { @class = "form-control" })
+            </div>
+            <div class="form-group">
+                @Html.LabelFor(m => m.AccountTransactionTypeId)
+                @Html.DropDownListFor(m => m.AccountTransactionTypeId, new SelectList(ViewBag.PaymentMethods, "Id", "Name"), new { @class = "form-control" })
+            </div>
+            <div class="form-group pull-right">
+                <button type="submit" accesskey="S">Submit</button>
+            </div>
+        }
+    </div>
+</div>

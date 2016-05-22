@@ -20,6 +20,7 @@
     <IISExpressAnonymousAuthentication>enabled</IISExpressAnonymousAuthentication>
     <IISExpressWindowsAuthentication>disabled</IISExpressWindowsAuthentication>
     <IISExpressUseClassicPipelineMode>false</IISExpressUseClassicPipelineMode>
+    <UseGlobalApplicationHostFile />
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -216,6 +217,7 @@
     <Compile Include="Models\AccountTransactionHandling\AccountTransactionCategoryInfo.cs" />
     <Compile Include="Models\AccountTransactionHandling\CategoryViewModel.cs" />
     <Compile Include="Models\AccountTransactionHandling\CreateAccountTransactionViewModel.cs" />
+    <Compile Include="Models\AccountTransactionHandling\RecordPurchaseViewModel.cs" />
     <Compile Include="Models\AccountTransactionHandling\SetCategoriesViewModel.cs" />
     <Compile Include="Models\BankAccount\BankAccountStatementViewModel.cs" />
     <Compile Include="Models\BankAccount\BankAccountViewModel.cs" />
@@ -401,7 +403,10 @@
     <Content Include="Scripts\respond.matchmedia.addListener.min.js" />
     <Content Include="Scripts\respond.min.js" />
     <Content Include="Scripts\_references.js" />
-    <Content Include="Web.config" />
+    <Content Include="Views\AccountTransaction\create.js" />
+    <Content Include="Web.config">
+      <SubType>Designer</SubType>
+    </Content>
     <Content Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </Content>
