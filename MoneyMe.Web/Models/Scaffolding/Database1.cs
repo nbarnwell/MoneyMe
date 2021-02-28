@@ -5,9 +5,9 @@
 // 
 // The following connection settings were used to generate this file
 // 
-//     Configuration file:     "C:\Users\neil\documents\github\MoneyMe\MoneyMe.Web\Web.config"
+//     Configuration file:     "MoneyMe.Web\Web.config"
 //     Connection String Name: "DefaultConnection"
-//     Connection String:      "server=(local);database=Vita;trusted_connection=true;"
+//     Connection String:      "server=(local);database=MoneyMe;trusted_connection=true;MultipleActiveResultSets=True;"
 
 // ReSharper disable RedundantUsingDirective
 // ReSharper disable DoNotCallOverridableMethodsInConstructor
@@ -42,17 +42,11 @@ namespace MoneyMe.Web.Models.Scaffolding
         IDbSet<AccountTransactionCategoryMatchPatternMatchMethod> AccountTransactionCategoryMatchPatternMatchMethods { get; set; } // AccountTransactionCategoryMatchPatternMatchMethod
         IDbSet<AccountTransactionStatu> AccountTransactionStatus { get; set; } // AccountTransactionStatus
         IDbSet<AccountTransactionType> AccountTransactionTypes { get; set; } // AccountTransactionType
-        IDbSet<AggregateRoot> AggregateRoots { get; set; } // AggregateRoot
-        IDbSet<AggregateRootEvent> AggregateRootEvents { get; set; } // AggregateRootEvent
-        IDbSet<AspNetRole> AspNetRoles { get; set; } // AspNetRoles
-        IDbSet<AspNetUser> AspNetUsers { get; set; } // AspNetUsers
-        IDbSet<AspNetUserClaim> AspNetUserClaims { get; set; } // AspNetUserClaims
-        IDbSet<AspNetUserLogin> AspNetUserLogins { get; set; } // AspNetUserLogins
         IDbSet<Bank> Banks { get; set; } // Bank
         IDbSet<BankAccount> BankAccounts { get; set; } // BankAccount
         IDbSet<BankSpecificTransactionType> BankSpecificTransactionTypes { get; set; } // BankSpecificTransactionType
-        IDbSet<Family> Families { get; set; } // Family
         IDbSet<Fund> Funds { get; set; } // Fund
+        IDbSet<Household> Households { get; set; } // Household
         IDbSet<User> Users { get; set; } // User
 
         int SaveChanges();
@@ -71,17 +65,11 @@ namespace MoneyMe.Web.Models.Scaffolding
         public IDbSet<AccountTransactionCategoryMatchPatternMatchMethod> AccountTransactionCategoryMatchPatternMatchMethods { get; set; } // AccountTransactionCategoryMatchPatternMatchMethod
         public IDbSet<AccountTransactionStatu> AccountTransactionStatus { get; set; } // AccountTransactionStatus
         public IDbSet<AccountTransactionType> AccountTransactionTypes { get; set; } // AccountTransactionType
-        public IDbSet<AggregateRoot> AggregateRoots { get; set; } // AggregateRoot
-        public IDbSet<AggregateRootEvent> AggregateRootEvents { get; set; } // AggregateRootEvent
-        public IDbSet<AspNetRole> AspNetRoles { get; set; } // AspNetRoles
-        public IDbSet<AspNetUser> AspNetUsers { get; set; } // AspNetUsers
-        public IDbSet<AspNetUserClaim> AspNetUserClaims { get; set; } // AspNetUserClaims
-        public IDbSet<AspNetUserLogin> AspNetUserLogins { get; set; } // AspNetUserLogins
         public IDbSet<Bank> Banks { get; set; } // Bank
         public IDbSet<BankAccount> BankAccounts { get; set; } // BankAccount
         public IDbSet<BankSpecificTransactionType> BankSpecificTransactionTypes { get; set; } // BankSpecificTransactionType
-        public IDbSet<Family> Families { get; set; } // Family
         public IDbSet<Fund> Funds { get; set; } // Fund
+        public IDbSet<Household> Households { get; set; } // Household
         public IDbSet<User> Users { get; set; } // User
 
         static ScaffoldDbContext()
@@ -115,17 +103,11 @@ namespace MoneyMe.Web.Models.Scaffolding
             modelBuilder.Configurations.Add(new AccountTransactionCategoryMatchPatternMatchMethodConfiguration());
             modelBuilder.Configurations.Add(new AccountTransactionStatuConfiguration());
             modelBuilder.Configurations.Add(new AccountTransactionTypeConfiguration());
-            modelBuilder.Configurations.Add(new AggregateRootConfiguration());
-            modelBuilder.Configurations.Add(new AggregateRootEventConfiguration());
-            modelBuilder.Configurations.Add(new AspNetRoleConfiguration());
-            modelBuilder.Configurations.Add(new AspNetUserConfiguration());
-            modelBuilder.Configurations.Add(new AspNetUserClaimConfiguration());
-            modelBuilder.Configurations.Add(new AspNetUserLoginConfiguration());
             modelBuilder.Configurations.Add(new BankConfiguration());
             modelBuilder.Configurations.Add(new BankAccountConfiguration());
             modelBuilder.Configurations.Add(new BankSpecificTransactionTypeConfiguration());
-            modelBuilder.Configurations.Add(new FamilyConfiguration());
             modelBuilder.Configurations.Add(new FundConfiguration());
+            modelBuilder.Configurations.Add(new HouseholdConfiguration());
             modelBuilder.Configurations.Add(new UserConfiguration());
         }
 
@@ -140,17 +122,11 @@ namespace MoneyMe.Web.Models.Scaffolding
             modelBuilder.Configurations.Add(new AccountTransactionCategoryMatchPatternMatchMethodConfiguration(schema));
             modelBuilder.Configurations.Add(new AccountTransactionStatuConfiguration(schema));
             modelBuilder.Configurations.Add(new AccountTransactionTypeConfiguration(schema));
-            modelBuilder.Configurations.Add(new AggregateRootConfiguration(schema));
-            modelBuilder.Configurations.Add(new AggregateRootEventConfiguration(schema));
-            modelBuilder.Configurations.Add(new AspNetRoleConfiguration(schema));
-            modelBuilder.Configurations.Add(new AspNetUserConfiguration(schema));
-            modelBuilder.Configurations.Add(new AspNetUserClaimConfiguration(schema));
-            modelBuilder.Configurations.Add(new AspNetUserLoginConfiguration(schema));
             modelBuilder.Configurations.Add(new BankConfiguration(schema));
             modelBuilder.Configurations.Add(new BankAccountConfiguration(schema));
             modelBuilder.Configurations.Add(new BankSpecificTransactionTypeConfiguration(schema));
-            modelBuilder.Configurations.Add(new FamilyConfiguration(schema));
             modelBuilder.Configurations.Add(new FundConfiguration(schema));
+            modelBuilder.Configurations.Add(new HouseholdConfiguration(schema));
             modelBuilder.Configurations.Add(new UserConfiguration(schema));
             return modelBuilder;
         }
@@ -169,17 +145,11 @@ namespace MoneyMe.Web.Models.Scaffolding
         public IDbSet<AccountTransactionCategoryMatchPatternMatchMethod> AccountTransactionCategoryMatchPatternMatchMethods { get; set; }
         public IDbSet<AccountTransactionStatu> AccountTransactionStatus { get; set; }
         public IDbSet<AccountTransactionType> AccountTransactionTypes { get; set; }
-        public IDbSet<AggregateRoot> AggregateRoots { get; set; }
-        public IDbSet<AggregateRootEvent> AggregateRootEvents { get; set; }
-        public IDbSet<AspNetRole> AspNetRoles { get; set; }
-        public IDbSet<AspNetUser> AspNetUsers { get; set; }
-        public IDbSet<AspNetUserClaim> AspNetUserClaims { get; set; }
-        public IDbSet<AspNetUserLogin> AspNetUserLogins { get; set; }
         public IDbSet<Bank> Banks { get; set; }
         public IDbSet<BankAccount> BankAccounts { get; set; }
         public IDbSet<BankSpecificTransactionType> BankSpecificTransactionTypes { get; set; }
-        public IDbSet<Family> Families { get; set; }
         public IDbSet<Fund> Funds { get; set; }
+        public IDbSet<Household> Households { get; set; }
         public IDbSet<User> Users { get; set; }
 
         public FakeScaffoldDbContext()
@@ -193,17 +163,11 @@ namespace MoneyMe.Web.Models.Scaffolding
             AccountTransactionCategoryMatchPatternMatchMethods = new FakeDbSet<AccountTransactionCategoryMatchPatternMatchMethod>();
             AccountTransactionStatus = new FakeDbSet<AccountTransactionStatu>();
             AccountTransactionTypes = new FakeDbSet<AccountTransactionType>();
-            AggregateRoots = new FakeDbSet<AggregateRoot>();
-            AggregateRootEvents = new FakeDbSet<AggregateRootEvent>();
-            AspNetRoles = new FakeDbSet<AspNetRole>();
-            AspNetUsers = new FakeDbSet<AspNetUser>();
-            AspNetUserClaims = new FakeDbSet<AspNetUserClaim>();
-            AspNetUserLogins = new FakeDbSet<AspNetUserLogin>();
             Banks = new FakeDbSet<Bank>();
             BankAccounts = new FakeDbSet<BankAccount>();
             BankSpecificTransactionTypes = new FakeDbSet<BankSpecificTransactionType>();
-            Families = new FakeDbSet<Family>();
             Funds = new FakeDbSet<Fund>();
+            Households = new FakeDbSet<Household>();
             Users = new FakeDbSet<User>();
         }
 
@@ -316,9 +280,6 @@ namespace MoneyMe.Web.Models.Scaffolding
         public virtual ICollection<BankAccount> BankAccounts { get; set; } // BankAccount.FK_BankAccount__Account
         public virtual ICollection<Fund> Funds { get; set; } // Fund.FK_Fund__Account
 
-        // Foreign keys
-        public virtual User User { get; set; } // FK_Account__User
-
         public Account()
         {
             AccountStatements = new List<AccountStatement>();
@@ -353,9 +314,8 @@ namespace MoneyMe.Web.Models.Scaffolding
     {
         public int Id { get; set; } // Id (Primary key)
         public int? AccountStatementId { get; set; } // AccountStatementId
-        public DateTimeOffset? TransactionDate { get; set; } // TransactionDate
-        public DateTimeOffset? ReceiptDate { get; set; } // TransactionTime
-        public DateTimeOffset RecordedDate { get; set; } // RecordedDate
+        public DateTimeOffset? TransactionTime { get; set; } // TransactionTime
+        public DateTime RecordedDate { get; set; } // RecordedDate
         public int AccountTransactionStatusId { get; set; } // AccountTransactionStatusId
         public decimal Amount { get; set; } // Amount
         public string Payee { get; set; } // Payee
@@ -393,14 +353,14 @@ namespace MoneyMe.Web.Models.Scaffolding
     {
         public int Id { get; set; } // Id (Primary key)
         public string Name { get; set; } // Name
-        public int FamilyId { get; set; } // FamilyId
+        public int HouseholdId { get; set; } // HouseholdId
 
         // Reverse navigation
         public virtual ICollection<AccountTransactionAccountTransactionCategory> AccountTransactionAccountTransactionCategories { get; set; } // Many to many mapping
         public virtual ICollection<AccountTransactionCategoryMatchPattern> AccountTransactionCategoryMatchPatterns { get; set; } // AccountTransactionCategoryMatchPattern.FK_AccountTransactionCategoryMatchPattern__AccountTransactionCategory
 
         // Foreign keys
-        public virtual Family Family { get; set; } // FK_AccountTransactionCategory__Family
+        public virtual Household Household { get; set; } // FK_AccountTransactionCategory__Household
 
         public AccountTransactionCategory()
         {
@@ -470,101 +430,6 @@ namespace MoneyMe.Web.Models.Scaffolding
         }
     }
 
-    // AggregateRoot
-    public class AggregateRoot
-    {
-        public Guid Id { get; set; } // Id (Primary key)
-        public int Version { get; set; } // Version
-
-        // Reverse navigation
-        public virtual ICollection<AggregateRootEvent> AggregateRootEvents { get; set; } // AggregateRootEvent.FK_AggregateRootEvent__AggregateRoot
-
-        public AggregateRoot()
-        {
-            AggregateRootEvents = new List<AggregateRootEvent>();
-        }
-    }
-
-    // AggregateRootEvent
-    public class AggregateRootEvent
-    {
-        public Guid Id { get; set; } // Id (Primary key)
-        public Guid AggregateId { get; set; } // AggregateId
-        public int Version { get; set; } // Version
-        public string Data { get; set; } // Data
-
-        // Foreign keys
-        public virtual AggregateRoot AggregateRoot { get; set; } // FK_AggregateRootEvent__AggregateRoot
-    }
-
-    // AspNetRoles
-    public class AspNetRole
-    {
-        public string Id { get; set; } // Id (Primary key)
-        public string Name { get; set; } // Name
-
-        // Reverse navigation
-        public virtual ICollection<AspNetUser> AspNetUsers { get; set; } // Many to many mapping
-
-        public AspNetRole()
-        {
-            AspNetUsers = new List<AspNetUser>();
-        }
-    }
-
-    // AspNetUsers
-    [System.ComponentModel.DataAnnotations.DisplayColumn("UserName")]
-    public class AspNetUser
-    {
-        public string Id { get; set; } // Id (Primary key)
-        public string Email { get; set; } // Email
-        public bool EmailConfirmed { get; set; } // EmailConfirmed
-        public string PasswordHash { get; set; } // PasswordHash
-        public string SecurityStamp { get; set; } // SecurityStamp
-        public string PhoneNumber { get; set; } // PhoneNumber
-        public bool PhoneNumberConfirmed { get; set; } // PhoneNumberConfirmed
-        public bool TwoFactorEnabled { get; set; } // TwoFactorEnabled
-        public DateTime? LockoutEndDateUtc { get; set; } // LockoutEndDateUtc
-        public bool LockoutEnabled { get; set; } // LockoutEnabled
-        public int AccessFailedCount { get; set; } // AccessFailedCount
-        public string UserName { get; set; } // UserName
-
-        // Reverse navigation
-        public virtual ICollection<AspNetRole> AspNetRoles { get; set; } // Many to many mapping
-        public virtual ICollection<AspNetUserClaim> AspNetUserClaims { get; set; } // AspNetUserClaims.FK_dbo.AspNetUserClaims_dbo.AspNetUsers_UserId
-        public virtual ICollection<AspNetUserLogin> AspNetUserLogins { get; set; } // Many to many mapping
-
-        public AspNetUser()
-        {
-            AspNetUserClaims = new List<AspNetUserClaim>();
-            AspNetUserLogins = new List<AspNetUserLogin>();
-            AspNetRoles = new List<AspNetRole>();
-        }
-    }
-
-    // AspNetUserClaims
-    public class AspNetUserClaim
-    {
-        public int Id { get; set; } // Id (Primary key)
-        public string UserId { get; set; } // UserId
-        public string ClaimType { get; set; } // ClaimType
-        public string ClaimValue { get; set; } // ClaimValue
-
-        // Foreign keys
-        public virtual AspNetUser AspNetUser { get; set; } // FK_dbo.AspNetUserClaims_dbo.AspNetUsers_UserId
-    }
-
-    // AspNetUserLogins
-    public class AspNetUserLogin
-    {
-        public string LoginProvider { get; set; } // LoginProvider (Primary key)
-        public string ProviderKey { get; set; } // ProviderKey (Primary key)
-        public string UserId { get; set; } // UserId (Primary key)
-
-        // Foreign keys
-        public virtual AspNetUser AspNetUser { get; set; } // FK_dbo.AspNetUserLogins_dbo.AspNetUsers_UserId
-    }
-
     // Bank
     public class Bank
     {
@@ -587,6 +452,7 @@ namespace MoneyMe.Web.Models.Scaffolding
     {
         public int Id { get; set; } // Id (Primary key)
         public int BankId { get; set; } // BankId
+        public int UserId { get; set; } // UserId
         public int AccountId { get; set; } // AccountId
         public decimal CreditLimit { get; set; } // CreditLimit
         public string BankName { get; set; } // BankName
@@ -596,6 +462,7 @@ namespace MoneyMe.Web.Models.Scaffolding
         // Foreign keys
         public virtual Account Account { get; set; } // FK_BankAccount__Account
         public virtual Bank Bank { get; set; } // FK_BankAccount__Bank
+        public virtual User User { get; set; } // FK_Account__User
     }
 
     // BankSpecificTransactionType
@@ -612,23 +479,6 @@ namespace MoneyMe.Web.Models.Scaffolding
         public virtual Bank Bank { get; set; } // FK_BankSpecificTransactionType__Bank
     }
 
-    // Family
-    public class Family
-    {
-        public int Id { get; set; } // Id (Primary key)
-        public string Name { get; set; } // Name
-
-        // Reverse navigation
-        public virtual ICollection<AccountTransactionCategory> AccountTransactionCategories { get; set; } // AccountTransactionCategory.FK_AccountTransactionCategory__Family
-        public virtual ICollection<User> Users { get; set; } // User.FK_User__Family
-
-        public Family()
-        {
-            AccountTransactionCategories = new List<AccountTransactionCategory>();
-            Users = new List<User>();
-        }
-    }
-
     // Fund
     public class Fund
     {
@@ -640,24 +490,41 @@ namespace MoneyMe.Web.Models.Scaffolding
         public virtual Account Account { get; set; } // FK_Fund__Account
     }
 
+    // Household
+    public class Household
+    {
+        public int Id { get; set; } // Id (Primary key)
+        public string Name { get; set; } // Name
+
+        // Reverse navigation
+        public virtual ICollection<AccountTransactionCategory> AccountTransactionCategories { get; set; } // AccountTransactionCategory.FK_AccountTransactionCategory__Household
+        public virtual ICollection<User> Users { get; set; } // User.FK_User__Household
+
+        public Household()
+        {
+            AccountTransactionCategories = new List<AccountTransactionCategory>();
+            Users = new List<User>();
+        }
+    }
+
     // User
     [System.ComponentModel.DataAnnotations.DisplayColumn("Username")]
     public class User
     {
         public int Id { get; set; } // Id (Primary key)
-        public string AspNetUserId { get; set; } // AspNetUserId
+        public string AuthenticationIdentity { get; set; } // AuthenticationIdentity
         public string Username { get; set; } // Username
-        public int? FamilyId { get; set; } // FamilyId
+        public int? HouseholdId { get; set; } // HouseholdId
 
         // Reverse navigation
-        public virtual ICollection<Account> Accounts { get; set; } // Account.FK_Account__User
+        public virtual ICollection<BankAccount> BankAccounts { get; set; } // BankAccount.FK_Account__User
 
         // Foreign keys
-        public virtual Family Family { get; set; } // FK_User__Family
+        public virtual Household Household { get; set; } // FK_User__Household
 
         public User()
         {
-            Accounts = new List<Account>();
+            BankAccounts = new List<BankAccount>();
         }
     }
 
@@ -676,9 +543,6 @@ namespace MoneyMe.Web.Models.Scaffolding
             Property(x => x.Id).HasColumnName("Id").IsRequired().HasDatabaseGeneratedOption(DatabaseGeneratedOption.Identity);
             Property(x => x.Name).HasColumnName("Name").IsRequired().HasMaxLength(256);
             Property(x => x.UserId).HasColumnName("UserId").IsRequired();
-
-            // Foreign keys
-            HasRequired(a => a.User).WithMany(b => b.Accounts).HasForeignKey(c => c.UserId); // FK_Account__User
         }
     }
 
@@ -711,8 +575,7 @@ namespace MoneyMe.Web.Models.Scaffolding
 
             Property(x => x.Id).HasColumnName("Id").IsRequired().HasDatabaseGeneratedOption(DatabaseGeneratedOption.Identity);
             Property(x => x.AccountStatementId).HasColumnName("AccountStatementId").IsOptional();
-            Property(x => x.TransactionDate).HasColumnName("TransactionDate").IsOptional();
-            Property(x => x.ReceiptDate).HasColumnName("TransactionTime").IsOptional();
+            Property(x => x.TransactionTime).HasColumnName("TransactionTime").IsOptional();
             Property(x => x.RecordedDate).HasColumnName("RecordedDate").IsRequired();
             Property(x => x.AccountTransactionStatusId).HasColumnName("AccountTransactionStatusId").IsRequired();
             Property(x => x.Amount).HasColumnName("Amount").IsRequired().HasPrecision(19,4);
@@ -755,10 +618,10 @@ namespace MoneyMe.Web.Models.Scaffolding
 
             Property(x => x.Id).HasColumnName("Id").IsRequired().HasDatabaseGeneratedOption(DatabaseGeneratedOption.Identity);
             Property(x => x.Name).HasColumnName("Name").IsRequired().HasMaxLength(256);
-            Property(x => x.FamilyId).HasColumnName("FamilyId").IsRequired();
+            Property(x => x.HouseholdId).HasColumnName("HouseholdId").IsRequired();
 
             // Foreign keys
-            HasRequired(a => a.Family).WithMany(b => b.AccountTransactionCategories).HasForeignKey(c => c.FamilyId); // FK_AccountTransactionCategory__Family
+            HasRequired(a => a.Household).WithMany(b => b.AccountTransactionCategories).HasForeignKey(c => c.HouseholdId); // FK_AccountTransactionCategory__Household
         }
     }
 
@@ -821,114 +684,6 @@ namespace MoneyMe.Web.Models.Scaffolding
         }
     }
 
-    // AggregateRoot
-    internal class AggregateRootConfiguration : EntityTypeConfiguration<AggregateRoot>
-    {
-        public AggregateRootConfiguration(string schema = "dbo")
-        {
-            ToTable(schema + ".AggregateRoot");
-            HasKey(x => x.Id);
-
-            Property(x => x.Id).HasColumnName("Id").IsRequired();
-            Property(x => x.Version).HasColumnName("Version").IsRequired();
-        }
-    }
-
-    // AggregateRootEvent
-    internal class AggregateRootEventConfiguration : EntityTypeConfiguration<AggregateRootEvent>
-    {
-        public AggregateRootEventConfiguration(string schema = "dbo")
-        {
-            ToTable(schema + ".AggregateRootEvent");
-            HasKey(x => x.Id);
-
-            Property(x => x.Id).HasColumnName("Id").IsRequired();
-            Property(x => x.AggregateId).HasColumnName("AggregateId").IsRequired();
-            Property(x => x.Version).HasColumnName("Version").IsRequired();
-            Property(x => x.Data).HasColumnName("Data").IsRequired();
-
-            // Foreign keys
-            HasRequired(a => a.AggregateRoot).WithMany(b => b.AggregateRootEvents).HasForeignKey(c => c.AggregateId); // FK_AggregateRootEvent__AggregateRoot
-        }
-    }
-
-    // AspNetRoles
-    internal class AspNetRoleConfiguration : EntityTypeConfiguration<AspNetRole>
-    {
-        public AspNetRoleConfiguration(string schema = "dbo")
-        {
-            ToTable(schema + ".AspNetRoles");
-            HasKey(x => x.Id);
-
-            Property(x => x.Id).HasColumnName("Id").IsRequired().HasMaxLength(128).HasDatabaseGeneratedOption(DatabaseGeneratedOption.None);
-            Property(x => x.Name).HasColumnName("Name").IsRequired().HasMaxLength(256);
-            HasMany(t => t.AspNetUsers).WithMany(t => t.AspNetRoles).Map(m => 
-            {
-                m.ToTable("AspNetUserRoles", schema);
-                m.MapLeftKey("RoleId");
-                m.MapRightKey("UserId");
-            });
-        }
-    }
-
-    // AspNetUsers
-    internal class AspNetUserConfiguration : EntityTypeConfiguration<AspNetUser>
-    {
-        public AspNetUserConfiguration(string schema = "dbo")
-        {
-            ToTable(schema + ".AspNetUsers");
-            HasKey(x => x.Id);
-
-            Property(x => x.Id).HasColumnName("Id").IsRequired().HasMaxLength(128).HasDatabaseGeneratedOption(DatabaseGeneratedOption.None);
-            Property(x => x.Email).HasColumnName("Email").IsOptional().HasMaxLength(256);
-            Property(x => x.EmailConfirmed).HasColumnName("EmailConfirmed").IsRequired();
-            Property(x => x.PasswordHash).HasColumnName("PasswordHash").IsOptional();
-            Property(x => x.SecurityStamp).HasColumnName("SecurityStamp").IsOptional();
-            Property(x => x.PhoneNumber).HasColumnName("PhoneNumber").IsOptional();
-            Property(x => x.PhoneNumberConfirmed).HasColumnName("PhoneNumberConfirmed").IsRequired();
-            Property(x => x.TwoFactorEnabled).HasColumnName("TwoFactorEnabled").IsRequired();
-            Property(x => x.LockoutEndDateUtc).HasColumnName("LockoutEndDateUtc").IsOptional();
-            Property(x => x.LockoutEnabled).HasColumnName("LockoutEnabled").IsRequired();
-            Property(x => x.AccessFailedCount).HasColumnName("AccessFailedCount").IsRequired();
-            Property(x => x.UserName).HasColumnName("UserName").IsRequired().HasMaxLength(256);
-        }
-    }
-
-    // AspNetUserClaims
-    internal class AspNetUserClaimConfiguration : EntityTypeConfiguration<AspNetUserClaim>
-    {
-        public AspNetUserClaimConfiguration(string schema = "dbo")
-        {
-            ToTable(schema + ".AspNetUserClaims");
-            HasKey(x => x.Id);
-
-            Property(x => x.Id).HasColumnName("Id").IsRequired().HasDatabaseGeneratedOption(DatabaseGeneratedOption.Identity);
-            Property(x => x.UserId).HasColumnName("UserId").IsRequired().HasMaxLength(128);
-            Property(x => x.ClaimType).HasColumnName("ClaimType").IsOptional();
-            Property(x => x.ClaimValue).HasColumnName("ClaimValue").IsOptional();
-
-            // Foreign keys
-            HasRequired(a => a.AspNetUser).WithMany(b => b.AspNetUserClaims).HasForeignKey(c => c.UserId); // FK_dbo.AspNetUserClaims_dbo.AspNetUsers_UserId
-        }
-    }
-
-    // AspNetUserLogins
-    internal class AspNetUserLoginConfiguration : EntityTypeConfiguration<AspNetUserLogin>
-    {
-        public AspNetUserLoginConfiguration(string schema = "dbo")
-        {
-            ToTable(schema + ".AspNetUserLogins");
-            HasKey(x => new { x.LoginProvider, x.ProviderKey, x.UserId });
-
-            Property(x => x.LoginProvider).HasColumnName("LoginProvider").IsRequired().HasMaxLength(128).HasDatabaseGeneratedOption(DatabaseGeneratedOption.None);
-            Property(x => x.ProviderKey).HasColumnName("ProviderKey").IsRequired().HasMaxLength(128).HasDatabaseGeneratedOption(DatabaseGeneratedOption.None);
-            Property(x => x.UserId).HasColumnName("UserId").IsRequired().HasMaxLength(128).HasDatabaseGeneratedOption(DatabaseGeneratedOption.None);
-
-            // Foreign keys
-            HasRequired(a => a.AspNetUser).WithMany(b => b.AspNetUserLogins).HasForeignKey(c => c.UserId); // FK_dbo.AspNetUserLogins_dbo.AspNetUsers_UserId
-        }
-    }
-
     // Bank
     internal class BankConfiguration : EntityTypeConfiguration<Bank>
     {
@@ -952,6 +707,7 @@ namespace MoneyMe.Web.Models.Scaffolding
 
             Property(x => x.Id).HasColumnName("Id").IsRequired().HasDatabaseGeneratedOption(DatabaseGeneratedOption.Identity);
             Property(x => x.BankId).HasColumnName("BankId").IsRequired();
+            Property(x => x.UserId).HasColumnName("UserId").IsRequired();
             Property(x => x.AccountId).HasColumnName("AccountId").IsRequired();
             Property(x => x.CreditLimit).HasColumnName("CreditLimit").IsRequired().HasPrecision(19,4);
             Property(x => x.BankName).HasColumnName("BankName").IsRequired().HasMaxLength(256);
@@ -960,6 +716,7 @@ namespace MoneyMe.Web.Models.Scaffolding
 
             // Foreign keys
             HasRequired(a => a.Bank).WithMany(b => b.BankAccounts).HasForeignKey(c => c.BankId); // FK_BankAccount__Bank
+            HasRequired(a => a.User).WithMany(b => b.BankAccounts).HasForeignKey(c => c.UserId); // FK_Account__User
             HasRequired(a => a.Account).WithMany(b => b.BankAccounts).HasForeignKey(c => c.AccountId); // FK_BankAccount__Account
         }
     }
@@ -984,19 +741,6 @@ namespace MoneyMe.Web.Models.Scaffolding
         }
     }
 
-    // Family
-    internal class FamilyConfiguration : EntityTypeConfiguration<Family>
-    {
-        public FamilyConfiguration(string schema = "dbo")
-        {
-            ToTable(schema + ".Family");
-            HasKey(x => x.Id);
-
-            Property(x => x.Id).HasColumnName("Id").IsRequired().HasDatabaseGeneratedOption(DatabaseGeneratedOption.Identity);
-            Property(x => x.Name).HasColumnName("Name").IsRequired().IsUnicode(false).HasMaxLength(50);
-        }
-    }
-
     // Fund
     internal class FundConfiguration : EntityTypeConfiguration<Fund>
     {
@@ -1014,6 +758,19 @@ namespace MoneyMe.Web.Models.Scaffolding
         }
     }
 
+    // Household
+    internal class HouseholdConfiguration : EntityTypeConfiguration<Household>
+    {
+        public HouseholdConfiguration(string schema = "dbo")
+        {
+            ToTable(schema + ".Household");
+            HasKey(x => x.Id);
+
+            Property(x => x.Id).HasColumnName("Id").IsRequired().HasDatabaseGeneratedOption(DatabaseGeneratedOption.Identity);
+            Property(x => x.Name).HasColumnName("Name").IsRequired().IsUnicode(false).HasMaxLength(50);
+        }
+    }
+
     // User
     internal class UserConfiguration : EntityTypeConfiguration<User>
     {
@@ -1023,12 +780,12 @@ namespace MoneyMe.Web.Models.Scaffolding
             HasKey(x => x.Id);
 
             Property(x => x.Id).HasColumnName("Id").IsRequired().HasDatabaseGeneratedOption(DatabaseGeneratedOption.Identity);
-            Property(x => x.AspNetUserId).HasColumnName("AspNetUserId").IsRequired().HasMaxLength(256);
+            Property(x => x.AuthenticationIdentity).HasColumnName("AuthenticationIdentity").IsRequired().HasMaxLength(256);
             Property(x => x.Username).HasColumnName("Username").IsRequired().HasMaxLength(256);
-            Property(x => x.FamilyId).HasColumnName("FamilyId").IsOptional();
+            Property(x => x.HouseholdId).HasColumnName("HouseholdId").IsOptional();
 
             // Foreign keys
-            HasOptional(a => a.Family).WithMany(b => b.Users).HasForeignKey(c => c.FamilyId); // FK_User__Family
+            HasOptional(a => a.Household).WithMany(b => b.Users).HasForeignKey(c => c.HouseholdId); // FK_User__Household
         }
     }
 
